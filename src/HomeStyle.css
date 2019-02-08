@@ -37,3 +37,9 @@ body{
     text-align: center;
     padding-top: 20px;
 }
+.gameContainer{
+    display: grid;
+    height: 1000px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
