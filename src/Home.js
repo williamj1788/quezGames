@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomeStyle.css';
+import TTTCard from './TTTCard';
 
 export default class Home extends React.Component{
     render(){
@@ -9,7 +10,7 @@ export default class Home extends React.Component{
                     <h1 className="title">QuezGames</h1>
                     <h3 className="title-sub">Click To Play A Game</h3>
                     <div className="gameContainer">
-                        
+                      <TTTCard />  
                     </div>
                 </div>
             </div>
