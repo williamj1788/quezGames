@@ -57,7 +57,7 @@ export default class App extends React.Component{
         return(
             <div>
                 {this.state.displayHome && <Home toggleDisplays={[this.displayHome,this.displayTTT,this.displayAGC,this.displayGG,this.displayRPS]} />}
-                {this.state.displayTTT && <TTTGame />}
+                {this.state.displayTTT && <TTTGame onClick={this.displayHome} />}
             </div>
         )
     }

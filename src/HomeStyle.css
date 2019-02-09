@@ -126,6 +126,7 @@ body{
     font-family: 'Aleo', serif;
     font-size: 25px;
     box-shadow: 0px 3px 6px gray;
+    z-index: 10;
 }
 .homeButton:hover{
     background-color: #4178AA;

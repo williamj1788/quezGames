@@ -1,5 +1,12 @@
 .computer{
-    font-size: 30px;
+    font-size: 45px;
     font-family: 'Aleo', serif;
     display: inline-block;
+    color: #FF0000;
+}
+.player{
+    font-size: 45px;
+    font-family: 'Aleo', serif;
+    display: inline-block;
+    color: #5AA5E8;
 }
