@@ -11,7 +11,7 @@ body{
 }
 #main{
     width: 80%;
-    height: 2000px;
+    /* height: 2000px; */
     background-color: #ffffff;
     margin: 0 auto;
     z-index: 2;
@@ -31,7 +31,7 @@ body{
 }
 .title-sub{
     font-family: 'Aleo', serif;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 50px;
     color: #707070;
     text-align: center;
@@ -39,18 +39,29 @@ body{
 }
 .gameContainer{
     display: grid;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top: 20px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 80px;
+    grid-template-rows: repeat(2, minmax(100px, 440px));
+    grid-template-columns: repeat(2, minmax(100px, 440px));
+    grid-row-gap: 80px;
+    grid-column-gap: 80px;
 }
 .TTT::after{
     background-image: url(./Img/tic_tac_toe.gif);
 }
+.RPS::after{
+    background-image: url(./Img/rock\,_paper_larger.jpg);
+}
+.GG::after{
+    background-image: url(./Img/question.png);
+}
+.AG::after{
+    background-image: url(./Img/boombox_background.jpg)
+}
 .card{
-    width: 440px;
-    height: 440px;
+    width:  100%;
+    height: auto;
     border-radius: 69px;
     /* box-shadow: 3px 9px 6px grey; */
     box-shadow: 1px 3px 6px grey;
@@ -58,9 +69,10 @@ body{
 }
 .card::after{
     content: "";
+    border-radius: 69px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    opacity: 0.3;
+    opacity: 0.2;
     top: 0;
     left: 0;
     bottom: 0;
@@ -68,18 +80,39 @@ body{
     position: absolute;
     z-index: 3;
 }
+.card:hover:after{
+    opacity: 0.7;
+    z-index: 40;
+    cursor: pointer;
+}
 .card-title{
     text-align: center;
     padding-top: 30px;
     font-size: 50px;
-    opacity: 0.8;
+    opacity: 1;
     color: #000000;
+    font-family: 'Aleo', serif;
+    font-weight: bold;
 }
 .card-description{
     text-align: center;
     padding: 0px 10px;
     padding-top: 30px;
-    font-size: 35px;
-    opacity: 0.8;
+    font-size: 30px;
+    opacity: 1;
     color: #000000;
+    font-family: 'Aleo', serif;
+    font-weight: normal;
+}
+@media (max-width: 1030px){
+    .gameContainer{
+        grid-template-rows: repeat(4, minmax(auto, 440px));
+        grid-template-columns: repeat(1, minmax(auto, 440px));
+    }
+    .title{
+        font-size: 12vw;
+    }
+    .title-sub{
+        font-size: 5vw;
+    }
 }

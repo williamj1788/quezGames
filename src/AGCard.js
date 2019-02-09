@@ -11,9 +11,9 @@ export default class TTTCard extends React.Component{
     
     render(){
         return(
-            <div className="TTT card" onClick={this.handleClick}>
-                <h3 className="card-title">Tick Tack Toe</h3>
-                <h3 className="card-description">Play A Classic Game of Tick Tack Toe</h3>
+            <div className="AG card" onClick={this.handleClick}>
+                <h3 className="card-title">Adventure Game</h3>
+                <h3 className="card-description">Play a text based adventure game</h3>
             </div>
         )
     }
