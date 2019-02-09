@@ -10,3 +10,20 @@
     display: inline-block;
     color: #5AA5E8;
 }
+#TTTGrid{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 200px);
+}
+.square{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-image: url(./Img/x.png);
+    background-position: center;
+}
