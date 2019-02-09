@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from './Home';
+import TTTGame from './TTTGame';
+
 export default class App extends React.Component{
     constructor(props){
         super(props);
@@ -54,6 +56,7 @@ export default class App extends React.Component{
         return(
             <div>
                 {this.state.displayHome && <Home toggleDisplays={[this.displayHome,this.displayTTT,this.displayAGC,this.displayGG,this.displayRPS]} />}
+                {this.state.displayTTT && <TTTGame />}
             </div>
         )
     }
