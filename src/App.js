@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import TTTGame from './TTTGame';
+import './TTTGameStyle.css';
 
 export default class App extends React.Component{
     constructor(props){
