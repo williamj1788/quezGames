@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import TTT from './TTT';
+import RPS from './RPS';
 import './TTTGameStyle.css';
 
 export default class App extends React.Component{
@@ -58,6 +59,7 @@ export default class App extends React.Component{
             <div>
                 {this.state.displayHome && <Home toggleDisplays={[this.displayHome,this.displayTTT,this.displayAGC,this.displayGG,this.displayRPS]} />}
                 {this.state.displayTTT && <TTT onClick={this.displayHome} />}
+                {this.state.displayRPS && <RPS onClick={this.displayHome} />}
             </div>
         )
     }
