@@ -5,41 +5,12 @@ var computer = require("./Img/BlueCircle.png");
 export default class Square extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            active: "none",
-        }
-        this.setActivetoPlayer = this.setActivetoPlayer.bind(this);
-        this.setActivetoComputer = this.setActivetoComputer.bind(this);
         this.changeImg = this.changeImg.bind(this);
-    }
-    componentWillReceiveProps(){
-        if(this.props.num === this.props.computerNum){
-            if(this.state.active !== 'none'){
-                this.props.onClick[0]();
-            }else{
-                this.setActivetoComputer();
-            }
-        }
-    }
-    
-    setActivetoPlayer(){
-        if(this.state.active === "none"){
-            this.setState({
-                active: "player"
-            });
-            this.props.onClick[1]();
-            this.props.onClick[0]();
-            console.log("Set Player");
-        }
-    }
-    setActivetoComputer(){
-        this.setState({
-            active: "computer"
-        });
-        this.props.onClick[1]();
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
     changeImg(){
-        switch(this.state.active){
+        // console.log(this.props.SquareList);
+        switch(this.props.SquareList){
             case "none":
                 return "";
             case "player":
@@ -50,10 +21,15 @@ export default class Square extends React.Component{
                 return "";
         }
     }
+    handleOnClick(){
+        this.props.onClick(this.props.num);
+    }
     
     render(){
+        // console.log("Square has been updated");
+        // console.log("Square has been updated" + this.changeImg());
         return(
-            <div className="square" id={"square"+ this.props.num} style={{backgroundImage: "url(" + this.changeImg() + ")"}} onClick={this.setActivetoPlayer}>
+            <div className="square" id={"square"+ this.props.num} style={{backgroundImage: "url(" + this.changeImg() + ")"}} onClick={this.handleOnClick}>
                 
             </div>
         )

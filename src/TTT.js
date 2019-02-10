@@ -4,9 +4,26 @@ import TTTGame from './TTTGame';
 export default class TTT extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            playerScore: 0,
+            computerScore: 0,
+        }
         this.handleOnClick = this.handleOnClick.bind(this);
+        this.incrementPlayerScore = this.incrementPlayerScore.bind(this);
+        this.incrementComputerScore = this.incrementComputerScore.bind(this);
     }
     
+    incrementPlayerScore(){
+        this.setState({
+            playerScore: this.state.playerScore + 1,
+        });
+    }
+    
+    incrementComputerScore(){
+        this.setState({
+            computerScore: this.state.computerScore + 1,
+        });
+    }
     
     handleOnClick(){
         this.props.onClick();
@@ -23,14 +40,14 @@ export default class TTT extends React.Component{
                     <div style={{width: "400px", margin: "0 auto", paddingTop: "50px"}}>
                         <div style={{display: "flex", justifyContent: "space-between"}}>
                             <p className="computer">Computer: </p>
-                            <p className="computer">Score</p>
+                            <p className="computer">{this.state.computerScore}</p>
                         </div>
                         <div style={{display: "flex", justifyContent: "space-between"}}>
                             <p className="player">Player: </p>
-                            <p className="player">Score</p>
+                            <p className="player">{this.state.playerScore}</p>
                         </div>
                     </div>
-                    <TTTGame />
+                    <TTTGame addScore={[this.incrementComputerScore,this.incrementPlayerScore]} />
                 </div>
             </div>
         )
