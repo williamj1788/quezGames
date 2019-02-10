@@ -46,6 +46,20 @@
     padding: 30px 50px;
     height: 1000px;
 }
+.RPS-imgs{
+    width: 280px;
+    height: 280px;
+    margin: 0 10px;
+}
+.score-div{
+    display: flex;
+    justify-content: space-around;
+}
+.RPS-player-score{
+    color: #00ADF9;
+    font-size: 40px;
+    font-family: 'Aleo', serif;
+}
 @media(max-width: 900px){
     .title.game{
         font-size: 8vw;
