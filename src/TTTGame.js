@@ -28,12 +28,13 @@ export default class TTTGame extends React.Component{
         this.setActivetoPlayer = this.setActivetoPlayer.bind(this);
         this.setActivetoComputer = this.setActivetoComputer.bind(this);
         this.clearBoardAndAddPoint = this.clearBoardAndAddPoint.bind(this);
+        this.getNumberOfSquaresActive = this.getNumberOfSquaresActive.bind(this);
     }
     
-    componentDidUpdate(){
+    componentDidUpdate(nextpros,nextstate){
         let state = this.state;
         let squareArray = [state.square1,state.square2,state.square3,state.square4,state.square5,state.square6,state.square7,state.square8,state.square9];
-        if(this.state.numberOfSquaresActive < 9){
+        if(this.getNumberOfSquaresActive() < 9){
             if(squareArray[0] === "player" && squareArray[4] === "player" && squareArray[8] === "player"){
                 this.clearBoardAndAddPoint("player");
             }else if(squareArray[0] === "computer" && squareArray[2] === "computer" && squareArray[8] === "computer"){
@@ -68,16 +69,26 @@ export default class TTTGame extends React.Component{
                 this.clearBoardAndAddPoint("player");
             }  
         }else{
-            this.clearBoardAndAddPoint("");
+            this.clearBoardAndAddPoint("tie");
         }
         
     }
+    getNumberOfSquaresActive(){
+        let state = this.state;
+        let squareArray = [state.square1,state.square2,state.square3,state.square4,state.square5,state.square6,state.square7,state.square8,state.square9];
+        return squareArray.filter((item) => {
+            return item !== "none";
+        }).length;
+    }
+    
     clearBoardAndAddPoint(winner){
         let callback;
         if(winner === "player"){
             callback = this.props.addScore[1];
         }else if(winner === "computer"){
             callback = this.props.addScore[0];
+        }else{
+            callback = this.props.addScore[2];
         }
         this.setState({
             computerNum: 0,
@@ -93,11 +104,12 @@ export default class TTTGame extends React.Component{
             square9: "none",
         }, callback);
         console.log("Clear!");
-        console.log(this.state.numberOfSquaresActive);
+        // console.log(this.state.numberOfSquaresActive);
     }
     
     computerTurn(){
-        if(this.state.numberOfSquaresActive < 9){
+        if(this.getNumberOfSquaresActive() < 9){
+            console.log("Computer turn");
             let number = getRandomInt(1, 10);
             let tempState = "square" + number;
             if(this.state[tempState] === "none"){
