@@ -43,23 +43,55 @@
 #RPS-container{
     display: grid;
     grid-template-columns: 3fr 4fr 3fr;
-    padding: 30px 50px;
-    height: 1000px;
+    padding: 0px 50px;
+    padding-top: 100px;
+    /* height: 500px; */
 }
 .RPS-imgs{
+    display: block;
     width: 280px;
     height: 280px;
-    margin: 0 10px;
+    margin: 0 auto;
 }
 .score-div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 280px;
+    margin: 0 auto;
 }
 .RPS-player-score{
-    color: #00ADF9;
     font-size: 40px;
     font-family: 'Aleo', serif;
 }
+#RPS-winner{
+    color: #00ADF9;
+    font-size: 40px;
+    font-family: 'Aleo', serif;
+    margin: 170px auto;
+    width: fit-content;
+}
+#RPS-button-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 200px;
+
+}
+.RPS-button{
+    width: 200px;
+    height: 70px;
+    border: 0;
+    background-color: #00ADF9;
+    color: white;
+    font-family: 'Aleo', serif;
+    font-size: 25px;
+    border-radius: 13px;
+}
+.RPS-button:hover{
+    background-color: #4178AA;
+    cursor: pointer; 
+}
+
 @media(max-width: 900px){
     .title.game{
         font-size: 8vw;
