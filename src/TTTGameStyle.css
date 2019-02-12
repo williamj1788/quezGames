@@ -110,11 +110,14 @@
     font-size: 50px;
     margin: 0 10px;
     color: #FF0000;
+    width: 40px;
+    text-align: center; 
 
 }
 .GGGame-GuessedWords-Container{
     margin-top: 40px;
     text-align: center; 
+    height: 462px;
 }
 
 .GGGame-GuessedWords-title{
@@ -128,6 +131,7 @@
     font-size: 35px;
     font-family: 'Aleo', serif;
     color: #00ADF9;
+    
 }
 .GGGame-input-Container{
     display: flex;
@@ -144,6 +148,7 @@
     font-family: 'Aleo', serif;
     font-size: 25px;
     border-radius: 20px;
+    box-shadow: 1px 3px 6px grey;
 }
 .GGGame-input{
     border-radius: 20px;
