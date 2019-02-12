@@ -104,6 +104,7 @@
     margin: 0 auto;
     margin-top: 40px;
     width: fit-content;
+    height: 61px;
 }
 .GGGame-GuessWord-Character{
     border-bottom: 3px solid black;
@@ -164,6 +165,7 @@
     background-color: #4178AA;
     cursor: pointer; 
 }
+
 @media(max-width: 900px){
     .title.game{
         font-size: 8vw;
