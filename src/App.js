@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home';
 import TTT from './TTT';
 import RPS from './RPS';
+import GG from'./GG';
 import './TTTGameStyle.css';
 
 export default class App extends React.Component{

@@ -29,7 +29,7 @@ export default class RPSPlayer extends React.Component{
                     <span className="RPS-player-score" style={{color: this.props.color}}>{this.props.player + ":"} </span>
                     <span className="RPS-player-score" style={{color: this.props.color}}>{this.props.score}</span>
                 </div>
-                <img className="RPS-imgs" src= {this.changeImg(this.props.play)} />
+                <img className="RPS-imgs" src= {this.changeImg(this.props.play)} alt="" />
                 <p className="RPS-player-score" style={{color: this.props.color, textAlign: "center"}}>{this.props.play}</p>
             </div>
         )

@@ -1,4 +1,5 @@
 import React from 'react';
+import GGGame from './GGGame';
 
 export default class GG extends React.Component{
     constructor(props){
@@ -15,10 +16,10 @@ export default class GG extends React.Component{
             <div id="main">
                 <div id="container">
                     <div className="titleBar">
-                        <h1 className="title game">Rock Paper Scissors</h1>
+                        <h1 className="title game">Guessing Game</h1>
                         <button className="homeButton" type="button" onClick={this.handleOnClick}>Home</button>
                     </div>
-                    
+                    <GGGame />
                 </div>
             </div>
         )
