@@ -24,8 +24,11 @@ export default class GGGame extends React.Component{
         this.getWordIndex = this.getWordIndex.bind(this);
         this.findIndenticalString = this.findIndenticalString.bind(this);
         this.gameOver =this.gameOver.bind(this);
+        this.getNewWord =this.getNewWord.bind(this);
     }
     componentWillMount(){
+        this.getNewWord();
+        
         let number1 = getRandomInt(0, this.state.word.length);
         let number2 = getRandomInt(0, this.state.word.length);
         while(number1 === number2){
@@ -36,6 +39,7 @@ export default class GGGame extends React.Component{
         });
     }
     addToGWords(word){
+        
         if(word === this.state.word){
             this.gameOver('winner');
         }else if(this.state.Guesses > 0){
@@ -53,6 +57,20 @@ export default class GGGame extends React.Component{
         }
         
         
+    }
+    getNewWord(){
+        let xhr = new XMLHttpRequest();
+        let api = "https://wordsapiv1.p.mashape.com/words";
+        let word = "/dog";
+        let key = "fb850a2b20mshfb7dc9250b5eec9p1d2a9cjsn25e22afe10b8"
+
+        
+        xhr.onload = () => {
+            console.log(xhr.response);
+        }
+        xhr.open('GET',api+word,true);
+        xhr.setRequestHeader("X-RapidAPI-Key", key);
+        xhr.send();
     }
 
     gameOver(decide){
