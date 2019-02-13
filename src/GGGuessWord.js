@@ -8,7 +8,7 @@ export default class GGGuessWord extends React.Component{
             if(this.props.word[1].indexOf(index) !== -1){
                 display = "";
             }
-            return <div className="GGGame-GuessWord-Character" key={item+1}><span style={{visibility: display}} >{item}</span></div>
+            return <div className="GGGame-GuessWord-Character" key={item+index}><span style={{visibility: display}} >{item}</span></div>
         });
         return(
             <div className="GGGame-GuessWord-Container">
