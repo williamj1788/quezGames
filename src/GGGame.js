@@ -13,6 +13,7 @@ export default class GGGame extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            title: "I'm Thinking Of A Word",
             word: "some",
             GWords: [],
             hints: 4,
@@ -22,6 +23,7 @@ export default class GGGame extends React.Component{
         this.addToGWords = this.addToGWords.bind(this);
         this.getWordIndex = this.getWordIndex.bind(this);
         this.findIndenticalString = this.findIndenticalString.bind(this);
+        this.gameOver =this.gameOver.bind(this);
     }
     componentWillMount(){
         let number1 = getRandomInt(0, this.state.word.length);
@@ -34,13 +36,42 @@ export default class GGGame extends React.Component{
         });
     }
     addToGWords(word){
-        if(this.state.Guesses > 0 && word.length > 0){
-            let GWords = this.state.GWords;
-            GWords.push([word, this.findIndenticalString(this.state.word,word)]);
+        if(word === this.state.word){
+            this.gameOver('winner');
+        }else if(this.state.Guesses > 0){
+            if(word.length > 0){
+                let GWords = this.state.GWords;
+                GWords.push([word, this.findIndenticalString(this.state.word,word)]);
+                this.setState({
+                    title: 'Try Again!',
+                    GWords: GWords,
+                    Guesses: this.state.Guesses - 1, 
+                }); 
+            }
+        }else{
+            this.gameOver('loser');
+        }
+        
+        
+    }
+
+    gameOver(decide){
+        if(decide === 'winner'){
             this.setState({
-                GWords: GWords,
-                Guesses: this.state.Guesses - 1, 
-            }); 
+                title: "That was the correct word",
+                GWords: [],
+                hints: 4,
+                Guesses: 10,
+                wordIndex: [],
+            });
+        }else{
+            this.setState({
+                title: "Out of Guesses! The Right Word Was: " + this.state.word,
+                GWords: [],
+                hints: 4,
+                Guesses: 10,
+                wordIndex: [],
+            });
         }
     }
     
@@ -86,7 +117,7 @@ export default class GGGame extends React.Component{
     render(){
         return(
             <div>
-                <h2 className="GGGame-title">I'm Thinking Of A Word</h2>
+                <h2 className="GGGame-title">{this.state.title}</h2>
                 <GGGuessWord word={[this.state.word,this.state.wordIndex]}/>
                 <GGGuessedWord Words={this.state.GWords}/>
                 <GGInput onEnter={this.addToGWords} Guesses={this.state.Guesses} Hints={this.state.hints} onClick={this.getWordIndex} />
