@@ -6,8 +6,8 @@ export default class GGGuessedWord extends React.Component{
     
     render(){
         let words = this.props.Words;
-        words = words.map((item) => {
-            return <div className="GGGame-GuessedWords-Character" key={item+1}>{item}</div>
+        words = words.map((item,i) => {
+            return <div className="GGGame-GuessedWords-Character" key={item+i}>{item[0] + "(" + item[1] + ")"}</div>
         });
         return(
             <div className="GGGame-GuessedWords-Container">

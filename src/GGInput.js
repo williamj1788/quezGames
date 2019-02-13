@@ -10,6 +10,7 @@ export default class GGInput extends React.Component{
     handleOnEnter(e){
         if(e.keyCode === 13){
             this.props.onEnter(e.target.value);
+            e.target.value = '';
         }
     }
     handleOnClick(){
