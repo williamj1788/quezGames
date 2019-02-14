@@ -6,49 +6,30 @@ export default class AGCGame extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentNode: '1',
-            nodes:[
-                {
-                    id: '1',
-                    natText: 'You are alone',
-                    options: [
-                        {
-                            text: 'fight',
-                            dest: '11'
-                        },
-                        {
-                            text: 'Run',
-                            dest: '12'
-                        },
-                        {
-                            text: 'Just die',
-                            dest: '13'
-                        },
-                    ]
-                },
-                {
-                    id: '11',
-                    natText: 'You fought and died',
-                    options: [
-                        {
-                            text: 'awake up',
-                            dest: '111'
-                        },
-                        {
-                            text: 'stay died',
-                            dest: '112'
-                        },
-                        {
-                            text: 'eat',
-                            dest: '113'
-                        },
-                    ]
-                }
-            ]
+            currentNode: 'start',
+            nodes: [],
         }
         this.switchCurrentNode = this.switchCurrentNode.bind(this);
         this.findCurrentNode = this.findCurrentNode.bind(this);
     }
+    
+    getNodes(){
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'Nodes.json',true);
+        xhr.onload = () =>{
+            this.setState({
+                nodes: JSON.parse(xhr.response).nodes,
+            });
+        }
+        xhr.send();
+    }
+
+    componentDidMount(){
+        this.getNodes();
+    }
+
+
+    
     switchCurrentNode(dest){
         this.setState({
             currentNode: dest,
@@ -67,11 +48,18 @@ export default class AGCGame extends React.Component{
         if(nodes.length > 1){
             alert("We Found more than one node. See console for details");
             console.log(nodes);
+        }else if(nodes.length === 0){
+            if(type === 'text'){
+                return '';
+            }else{
+                return 'null'
+            }
         }else if(type === 'text'){
             return nodes[0].natText;
         }else if(type === 'options'){
             return nodes[0].options;
         }
+        
     }
 
     render(){

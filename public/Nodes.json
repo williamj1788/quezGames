@@ -1,0 +1,40 @@
+{
+    "nodes":[
+        {
+            "id": "start",
+            "natText": "You are an single farmer that has gotten bored with his mundane life. So you decide to sell your house and land to set out for an adventure. What do you do next?",
+            "options": [
+                {
+                    "text": "Viste the town",
+                    "dest": "1"
+                },
+                {
+                    "text": "Go into the woods",
+                    "dest": "2"
+                },
+                {
+                    "text": "Travel on the southern Road",
+                    "dest": "3"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "natText": "After a long journey, you finally reach the town. You find it actively busy",
+            "options": [
+                {
+                    "text": "Viste the seapost",
+                    "dest": "11"
+                },
+                {
+                    "text": "Viste the king",
+                    "dest": "12"
+                },
+                {
+                    "text": "Viste the tavern",
+                    "dest": "13"
+                }
+            ]
+        }
+    ]
+}

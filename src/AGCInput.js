@@ -12,9 +12,12 @@ export default class AGCInput extends React.Component{
     
     render(){
         let options = this.props.options;
-        options = options.map((item,index) => {
-            return <button className="AGC-button" onClick={() => {this.handeOnClick(item.dest)}} key={"button" + index}>{item.text}</button>
-        });
+        if(options !== 'null'){
+            options = options.map((item,index) => {
+                return <button className="AGC-button" onClick={() => {this.handeOnClick(item.dest)}} key={"button" + index}>{item.text}</button>
+            });
+        }
+        
         return(
             <div className="AGC-button-container">
                 {options}

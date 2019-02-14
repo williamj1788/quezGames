@@ -186,6 +186,7 @@
     font-family: 'Aleo', serif;
     color: #00ADF9;
     text-align: center;
+    white-space: pre-line;
 }
 .AGC-button-container{
     display: flex;
