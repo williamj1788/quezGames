@@ -32,10 +32,12 @@
                 },
                 {
                     "text": "Viste the tavern",
-                    "dest": "13"
+                    "altText": "You viste the tavern and order a drink... and other... and other. Soon you are low on money and leave the tavern completely drunk.",
+                    "modifier": "drunk"
                 }
             ]
         },
+        
         {
             "id": "12",
             "natText": "You viste the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the oppurity, you ofter to buy one.",
@@ -51,6 +53,16 @@
                 {
                     "text": "Buy the small boat",
                     "dest": "123"
+                }
+            ]
+        },
+        {
+            "id": "122",
+            "natText": "You use the last of your money and buy the boat. You spent the rest of you life as a traveling merchant",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
                 }
             ]
         },
