@@ -20,14 +20,14 @@
         },
         {
             "id": "1",
-            "natText": "After a long journey, you finally reach the town. You find it actively busy",
+            "natText": "After a long journey, you finally reach the town. Where do you go next?",
             "options": [
                 {
-                    "text": "Viste the seapost",
+                    "text": "Viste the king",
                     "dest": "11"
                 },
                 {
-                    "text": "Viste the king",
+                    "text": "Viste the seaport",
                     "dest": "12"
                 },
                 {
@@ -35,6 +35,35 @@
                     "dest": "13"
                 }
             ]
+        },
+        {
+            "id": "12",
+            "natText": "You viste the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the oppurity, you ofter to buy one.",
+            "options": [
+                {
+                    "text": "Buy the large boat",
+                    "altText": "That boat is too expensive. You must offer to buy other one."
+                },
+                {
+                    "text": "Buy the medium boat",
+                    "dest": "122"
+                },
+                {
+                    "text": "Buy the small boat",
+                    "dest": "123"
+                }
+            ]
+        },
+        {
+            "id": "123",
+            "natText": "Soon After you take off, a HUGE wave smashes you boat into pieces and you soon drown. Your death was slow and painful",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
         }
+
     ]
 }

@@ -17,9 +17,10 @@ export default class AGCInput extends React.Component{
                 return <button className="AGC-button" onClick={() => {this.handeOnClick(item.dest)}} key={"button" + index}>{item.text}</button>
             });
         }
+        let content = options.length < 3 ? "space-around" : "space-between";
         
         return(
-            <div className="AGC-button-container">
+            <div className="AGC-button-container" style={{justifyContent: content}}>
                 {options}
             </div>
         )

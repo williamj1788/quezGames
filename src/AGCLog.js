@@ -11,7 +11,7 @@ export default class AGCLog extends React.Component{
     shouldComponentUpdate(nextprops,nextstate){
         if(nextprops !== this.props && this.props.text !== 'null'){
             this.setState({
-                log: this.state.log + '\n'+ nextprops.text,
+                log: this.state.log + '\n\n'+ nextprops.text,
             });
             return true;
         }else{
