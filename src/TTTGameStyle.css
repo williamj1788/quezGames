@@ -2,7 +2,6 @@
     white-space: nowrap;
 }
 
-
 .computer{
     font-size: 45px;
     font-family: 'Aleo', serif;
@@ -183,8 +182,32 @@
     width: 600px;
     height: 500px;
     padding: 10px;
-    font-size: 40px;
+    font-size: 20px;
     font-family: 'Aleo', serif;
+    color: #00ADF9;
+    text-align: center;
+}
+.AGC-button-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;;
+
+}
+
+.AGC-button{
+    width: 325px;
+    height: 260px;
+    border: 0;
+    background-color: #00ADF9;
+    color: white;
+    font-family: 'Aleo', serif;
+    font-size: 25px;
+    border-radius: 20px;
+    box-shadow: 1px 3px 6px grey;
+}
+.AGC-button:hover{
+    background-color: #4178AA;
+    cursor: pointer;
 }
 
 @media(max-width: 900px){
