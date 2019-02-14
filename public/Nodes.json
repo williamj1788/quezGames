@@ -75,6 +75,16 @@
                     "dest": "start"
                 }
             ]
+        },
+        {
+            "id": "11",
+            "natText": "You somehow manage to get an audience with the king and you offer to become a knight. He is impressed by your braveness and grants you request. The live the rest of your life as the king's personal body guard.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
         }
 
     ]

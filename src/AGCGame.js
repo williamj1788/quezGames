@@ -11,7 +11,7 @@ export default class AGCGame extends React.Component{
             log: ''
         }
         this.switchCurrentNode = this.switchCurrentNode.bind(this);
-        this.findCurrentNode = this.findCurrentNode.bind(this);
+        this.findNode = this.findNode.bind(this);
     }
     
     getNodes(){
@@ -35,72 +35,60 @@ export default class AGCGame extends React.Component{
         });
     }
 
-
-    
-    switchCurrentNode(option){
+    switchCurrentNode(option,node){
         if(option.altText){
             let nodes = this.state.nodes;
-            let location = 0;
-            nodes = nodes.filter(item => {
-                item.options.forEach((optionTemp,index) => {
-                    if(optionTemp.altText === option.altText){
-                        location = index;
-                        return true;
-                    }else{
-                        return false;
-                    }
+            let index1 = nodes.indexOf(node);
+            let index2 = nodes[index1].options.indexOf(option);
+            nodes[index1].options.splice(index2,1);
+            if(option.modifier){
+                if(option.modifier === 'drunk'){
+                    nodes[nodes.indexOf(this.findNode('11'))].natText = "You somehow manage to get an audience with the king, but you drunkness affends hims. he orders your immediated execution. Your death was quick";
+                    this.setState({
+                        log: this.state.log + '\n\n'+ option.altText,
+                        nodes: nodes,
+                    });
+                }
+            }else{
+                this.setState({
+                    log: this.state.log + '\n\n'+ option.altText,
+                    nodes: nodes,
                 });
-            })[0];
-            
-
-            this.setState({
-                log: this.state.log + '\n\n'+ option.altText,
-            });
+            }
         }
         if(option.dest){
-            this.setState({
-                currentNode: option.dest,
-            });
-        }
-        if(option.modifier){
-            this.callModifier(option,option.modifier);
-        }
-    }
-    callModifier(modifier){
-        console.log(modifier);
-        let nodes = this.state.nodes;
-        nodes = nodes.filter(item => {
-            
-            if(item.options === id){
-                return true;
+            if(option.dest === 'start'){
+                let promise = this.getNodes();
+                promise.then((nodes) => {
+                    this.setState({
+                        nodes: nodes,
+                        log: nodes[0].natText,
+                        currentNode: 'start',
+                    });
+                });
             }else{
-                return false;
+                this.setState({
+                    currentNode: option.dest,
+                    log: this.state.log + '\n\n'+ this.findNode(option.dest).natText,
+                });
             }
-        });
+        }
     }
 
-    findCurrentNode(id,type){
+    findNode(id){
         let nodes = this.state.nodes;
-        nodes = nodes.filter(item => {
-            if(item.id === id){
-                return true;
-            }else{
-                return false;
-            }
-        });
-        if(nodes.length > 1){
-            alert("We Found more than one node. See console for details");
-            console.log(nodes);
-        }else if(nodes.length === 0){
-            if(type === 'text'){
-                return '';
-            }else{
-                return 'null'
-            }
-        }else if(type === 'text'){
-            return nodes[0].natText;
-        }else if(type === 'options'){
-            return nodes[0].options;
+        if(nodes.length !== 0){
+            console.log();
+            nodes = nodes.filter(item => {
+                if(item.id === id){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            return nodes[0];
+        }else{
+            return '';
         }
         
     }
@@ -109,7 +97,7 @@ export default class AGCGame extends React.Component{
         return(
             <div>
                 <AGCLog text={this.state.log}/>
-                <AGCInput options={this.findCurrentNode(this.state.currentNode,'options')} onClick={this.switchCurrentNode}/>
+                <AGCInput node={this.findNode(this.state.currentNode)} onClick={this.switchCurrentNode}/>
             </div>
         )
     }
