@@ -173,6 +173,19 @@
     background-color: #4178AA;
     cursor: pointer; 
 }
+.AGC-log{
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 1px 3px 6px grey;
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Aleo', serif;
+}
 
 @media(max-width: 900px){
     .title.game{

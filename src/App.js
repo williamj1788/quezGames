@@ -3,6 +3,7 @@ import Home from './Home';
 import TTT from './TTT';
 import RPS from './RPS';
 import GG from'./GG';
+import AGC from './AGC';
 import './TTTGameStyle.css';
 
 export default class App extends React.Component{
@@ -62,6 +63,7 @@ export default class App extends React.Component{
                 {this.state.displayTTT && <TTT onClick={this.displayHome} />}
                 {this.state.displayRPS && <RPS onClick={this.displayHome} />}
                 {this.state.displayGG && <GG onClick={this.displayHome} />}
+                {this.state.displayAGC && <AGC onClick={this.displayHome} />}
             </div>
         )
     }
