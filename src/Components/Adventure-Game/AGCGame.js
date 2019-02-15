@@ -1,6 +1,5 @@
 import React from 'react';
-import AGCLog from './AGCLog';
-import AGCInput from './AGCInput';
+import AGRender from './AGRender';
 
 export default class AGCGame extends React.Component{
     constructor(props){
@@ -35,13 +34,13 @@ export default class AGCGame extends React.Component{
         });
     }
 
-    switchCurrentNode(option,node){
+    switchCurrentNode(option){
         
         let nodes = this.state.nodes;
         let log = this.state.log;
         let currentNode = this.state.currentNode;
         
-        let index1 = nodes.indexOf(node);
+        let index1 = nodes.indexOf(this.findNode(this.state.currentNode));
         let index2 = nodes[index1].options.indexOf(option);
         
         if(option.altText){
@@ -104,10 +103,7 @@ export default class AGCGame extends React.Component{
 
     render(){
         return(
-            <div>
-                <AGCLog text={this.state.log}/>
-                <AGCInput node={this.findNode(this.state.currentNode)} onClick={this.switchCurrentNode}/>
-            </div>
+            <AGRender node={this.findNode(this.state.currentNode)} text={this.state.log} onClick={this.switchCurrentNode}/>
         )
     }
 }

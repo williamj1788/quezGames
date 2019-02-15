@@ -72,7 +72,6 @@ export default class GGGame extends React.Component{
             let key = "fb850a2b20mshfb7dc9250b5eec9p1d2a9cjsn25e22afe10b8";
             xhr.onload = () => {
                 let data = JSON.parse(xhr.response);
-                console.log(data);
                 resolve(data);
             }
             xhr.open('GET',api + wordQuery,true);
@@ -127,9 +126,7 @@ export default class GGGame extends React.Component{
         let string2Array = string2.toLowerCase().split('');
         let count = 0;
         let tracker = [];
-        // console.log(string1Array, string2Array);
         for(let element2 of string2Array){
-            // console.log(element2);
             for(let element1 of string1Array){
                 if(element1 === element2 && tracker.indexOf(element1) === -1){
                     tracker.push(element2);
@@ -139,7 +136,6 @@ export default class GGGame extends React.Component{
                 }
             }
         }
-        console.log(count);
         return count;
     }
     

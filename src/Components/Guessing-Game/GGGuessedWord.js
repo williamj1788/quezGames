@@ -1,5 +1,4 @@
 import React from 'react';
-/* <div className="GGGame-GuessedWords-Character">Word</div> */
 export default class GGGuessedWord extends React.Component{
     
     
