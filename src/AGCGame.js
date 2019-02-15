@@ -36,43 +36,52 @@ export default class AGCGame extends React.Component{
     }
 
     switchCurrentNode(option,node){
+        
+        let nodes = this.state.nodes;
+        let log = this.state.log;
+        let currentNode = this.state.currentNode;
+        
+        let index1 = nodes.indexOf(node);
+        let index2 = nodes[index1].options.indexOf(option);
+        
         if(option.altText){
-            let nodes = this.state.nodes;
-            let index1 = nodes.indexOf(node);
-            let index2 = nodes[index1].options.indexOf(option);
             nodes[index1].options.splice(index2,1);
-            if(option.modifier){
-                if(option.modifier === 'drunk'){
-                    nodes[nodes.indexOf(this.findNode('11'))].natText = "You somehow manage to get an audience with the king, but you drunkness affends hims. he orders your immediated execution. Your death was quick";
-                    this.setState({
-                        log: this.state.log + '\n\n'+ option.altText,
-                        nodes: nodes,
-                    });
-                }
-            }else{
-                this.setState({
-                    log: this.state.log + '\n\n'+ option.altText,
-                    nodes: nodes,
-                });
+            log += '\n\n'+ option.altText;
+        }
+        if(option.modifier){
+            if(option.modifier === 'drunk'){
+                nodes[nodes.indexOf(this.findNode('11'))].natText = "You somehow manage to get an audience with the king, but you drunkness affends hims. he orders your immediated execution. Your death was quick";
+                nodes[nodes.indexOf(this.findNode('12'))].options[1] = {
+                    text: "Buy the medium boat",
+                    altText: "You spent too much money at the tavern and cant afford the ship",
+                };
+            }else if(option.modifier === 'mauled'){
+                nodes[nodes.indexOf(this.findNode('2'))].natText = "By some merical, you manage to fend of the bear, but you are wonnded in the processes.";
+                nodes[nodes.indexOf(this.findNode('2'))].options.splice(0,1);
+                nodes[nodes.indexOf(this.findNode('22'))].natText = "You find a random wolf. Since you are already badly wound, it makes quick work of you. maybe going into the woods was a bad idea."
             }
         }
         if(option.dest){
             if(option.dest === 'start'){
                 let promise = this.getNodes();
-                promise.then((nodes) => {
+                promise.then((value) => {
                     this.setState({
-                        nodes: nodes,
+                        nodes: value,
                         log: nodes[0].natText,
                         currentNode: 'start',
                     });
                 });
+                return
             }else{
-                this.setState({
-                    currentNode: option.dest,
-                    log: this.state.log + '\n\n'+ this.findNode(option.dest).natText,
-                });
+                currentNode = option.dest;
+                log += '\n\n'+ this.findNode(option.dest).natText;
             }
         }
+        this.setState({
+            nodes: nodes,
+            currentNode: currentNode,
+            log: log,
+        });
     }
 
     findNode(id){

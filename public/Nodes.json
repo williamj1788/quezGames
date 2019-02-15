@@ -37,7 +37,6 @@
                 }
             ]
         },
-        
         {
             "id": "12",
             "natText": "You viste the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the oppurity, you ofter to buy one.",
@@ -79,6 +78,113 @@
         {
             "id": "11",
             "natText": "You somehow manage to get an audience with the king and you offer to become a knight. He is impressed by your braveness and grants you request. The live the rest of your life as the king's personal body guard.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "natText": "You head into the woods and find there are two people to take",
+            "options": [
+                {
+                    "text": "Go left",
+                    "dest": "21"
+                },
+                {
+                    "text": "Go right",
+                    "dest": "22"
+                }
+            ]
+        },
+        {
+            "id": "22",
+            "natText": "You find a random wolf and it immedianity attacks you. you manage to fend it off, but you are bleading massivly and eventully die of blood lose.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "21",
+            "natText": "You are met by a HUGE black bear and immedinate charges you",
+            "options": [
+                {
+                    "text": "Stand you ground",
+                    "dest": "2",
+                    "modifier": "mauled"
+                },
+                {
+                    "text": "Run away",
+                    "dest": "222"
+                }
+            ]
+        },
+        {
+            "id": "222",
+            "natText": "The bear manages to catches up to you and mauls you to death. It was very painful",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "natText": "After a long journey, you see a shady fellow in the distance",
+            "options": [
+                {
+                    "text": "Go talk to him",
+                    "dest": "31"
+                },
+                {
+                    "text": "Keep going",
+                    "dest": "32"
+                }
+            ]
+        },
+        {
+            "id": "31",
+            "natText": "We have a pleasant chat and as soon as your turn back, he pulls out a large knife, stabs you in the back and takes your money.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "32",
+            "natText": "You keep going, but soon realizes that the man has been following you",
+            "options": [
+                {
+                    "text": "Face him!",
+                    "dest": "321"
+                },
+                {
+                    "text": "Keep walking",
+                    "dest": "322"
+                }
+            ]
+        },
+        {
+            "id": "321",
+            "natText": "You decide to face him, but he is well armed and you fall to his blade. He takes your money",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "322",
+            "natText": "The man quickly catches up to you and pulls out a knife. He stabs you while you weren't looking and takes you money.",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
