@@ -2,10 +2,10 @@
     "nodes":[
         {
             "id": "start",
-            "natText": "You are an single farmer that has gotten bored with his mundane life. So you decide to sell your house and land to set out for an adventure. What do you do next?",
+            "natText": "You are a single farmer that has gotten bored with his mundane life. So you decide to sell your house and land to set out for an adventure. What do you do next?",
             "options": [
                 {
-                    "text": "Viste the town",
+                    "text": "Visit the town",
                     "dest": "1"
                 },
                 {
@@ -13,7 +13,7 @@
                     "dest": "2"
                 },
                 {
-                    "text": "Travel on the southern Road",
+                    "text": "Travel on the southern road",
                     "dest": "3"
                 }
             ]
@@ -23,30 +23,30 @@
             "natText": "After a long journey, you finally reach the town. Where do you go next?",
             "options": [
                 {
-                    "text": "Viste the king",
+                    "text": "Visit the king",
                     "dest": "11"
                 },
                 {
-                    "text": "Viste the seaport",
+                    "text": "Visit the seaport",
                     "dest": "12"
                 },
                 {
-                    "text": "Viste the tavern",
-                    "altText": "You viste the tavern and order a drink... and other... and other. Soon you are low on money and leave the tavern completely drunk.",
+                    "text": "Visit the tavern",
+                    "altText": "You visit the tavern and order a drink... and other... and other. Soon you are low on money and leave the tavern completely drunk.",
                     "modifier": "drunk"
                 }
             ]
         },
         {
             "id": "12",
-            "natText": "You viste the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the oppurity, you ofter to buy one.",
+            "natText": "You visit the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the opportunity, you offer to buy one.",
             "options": [
                 {
-                    "text": "Buy the large boat",
-                    "altText": "That boat is too expensive. You must offer to buy other one."
+                    "text": "Buy the large ship",
+                    "altText": "The ship is too expensive. You must offer to buy another one."
                 },
                 {
-                    "text": "Buy the medium boat",
+                    "text": "Buy the medium ship",
                     "dest": "122"
                 },
                 {
@@ -57,7 +57,7 @@
         },
         {
             "id": "122",
-            "natText": "You use the last of your money and buy the boat. You spent the rest of you life as a traveling merchant",
+            "natText": "You use the last of your money and buy the ship. You spend the rest of your life as a traveling merchant",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -67,7 +67,7 @@
         },
         {
             "id": "123",
-            "natText": "Soon After you take off, a HUGE wave smashes you boat into pieces and you soon drown. Your death was slow and painful",
+            "natText": "Soon after you take off, a HUGE wave smashes you boat into pieces and you later drown. Your death was slow and painful",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -77,7 +77,7 @@
         },
         {
             "id": "11",
-            "natText": "You somehow manage to get an audience with the king and you offer to become a knight. He is impressed by your braveness and grants you request. The live the rest of your life as the king's personal body guard.",
+            "natText": "You somehow manage to get an audience with the king and you offer to become a knight. He is impressed by your braveness and grants your request. You live the rest of your life as the king's personal bodyguard.",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -87,7 +87,7 @@
         },
         {
             "id": "2",
-            "natText": "You head into the woods and find there are two people to take",
+            "natText": "You head into the woods and find there are two paths to take",
             "options": [
                 {
                     "text": "Go left",
@@ -101,7 +101,7 @@
         },
         {
             "id": "22",
-            "natText": "You find a random wolf and it immedianity attacks you. you manage to fend it off, but you are bleading massivly and eventully die of blood lose.",
+            "natText": "You find a random wolf and it immediately attacks you. You manage to fend it off, but you are bleeding massively and eventually die of blood loss.",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -111,7 +111,7 @@
         },
         {
             "id": "21",
-            "natText": "You are met by a HUGE black bear and immedinate charges you",
+            "natText": "You are met by a HUGE black bear and it immediately charges you!",
             "options": [
                 {
                     "text": "Stand you ground",
@@ -126,7 +126,7 @@
         },
         {
             "id": "222",
-            "natText": "The bear manages to catches up to you and mauls you to death. It was very painful",
+            "natText": "The bear manages to catch up to you and mauls you to death. It was very painful",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -150,7 +150,7 @@
         },
         {
             "id": "31",
-            "natText": "We have a pleasant chat and as soon as your turn back, he pulls out a large knife, stabs you in the back and takes your money.",
+            "natText": "We have a pleasant chat and as soon as you turn your back, he pulls out a large knife, stabs you in the back and takes your money.",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
