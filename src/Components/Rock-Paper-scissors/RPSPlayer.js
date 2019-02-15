@@ -24,7 +24,7 @@ export default class RPSPlayer extends React.Component{
     
     render(){
         return(
-            <div id="RPS-player">
+            <div className="RPS-player">
                 <div className="score-div">
                     <span className="RPS-player-score" style={{color: this.props.color}}>{this.props.player + ":"} </span>
                     <span className="RPS-player-score" style={{color: this.props.color}}>{this.props.score}</span>

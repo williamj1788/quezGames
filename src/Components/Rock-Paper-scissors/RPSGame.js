@@ -147,13 +147,13 @@ export default class RPSGame extends React.Component{
                 }
             });
         }else{
-            alert("What the heck happen!");
+            alert("What happen!");
         }
     }
     
     render(){
         return(
-            <div>
+            <div className="RPS-Game">
                 <div id="RPS-container">
                     <RPSPlayer color={"#00ADF9"} player={"Player"} score={this.state.player.score} play={this.state.player.play} />
                     <div ><p id="RPS-winner" style={{color: this.state.winner.color}} >{this.state.winner.text}</p></div>
