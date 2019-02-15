@@ -1,5 +1,4 @@
 import React from 'react';
-import './HomeStyle.css';
 import TTTCard from './TTTCard';
 import RPSCard from './RPSCard';
 import GGCard from './GGCard';

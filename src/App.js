@@ -1,10 +1,11 @@
 import React from 'react';
-import Home from './Home';
-import TTT from './TTT';
-import RPS from './RPS';
-import GG from'./GG';
-import AGC from './AGC';
-import './TTTGameStyle.css';
+import Home from './Components/Home/Home';
+import TTT from './Components/Tick-Tack-Toe/TTT';
+import RPS from './Components/Rock-Paper-scissors/RPS';
+import GG from'./Components/Guessing-Game/GG';
+import AGC from './Components/Adventure-Game/AGC';
+import './Styles/TTTGameStyle.css';
+import './Styles/HomeStyle.css';
 
 export default class App extends React.Component{
     constructor(props){
