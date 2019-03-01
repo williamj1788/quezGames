@@ -14,6 +14,6 @@ npm start
 ```
 The project show open up in a new tab
 
-If it doesn't, you can view on localhost 3000
+If it doesn't, you can view on localhost 3001
 
 Happy Coding
