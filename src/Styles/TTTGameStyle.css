@@ -28,7 +28,7 @@
     border: 1px solid black;
     background-repeat: no-repeat;
     background-size: 80% 80%;
-    background-image: url(../Img/x.png);
+    background-image: url(../Components/Img/x.png);
     background-position: center;
 }
 #score-container{

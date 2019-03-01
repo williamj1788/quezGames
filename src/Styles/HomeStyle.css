@@ -54,16 +54,16 @@ body{
     grid-column-gap: 80px;
 }
 .TTT::after{
-    background-image: url(../Img/tic_tac_toe.gif);
+    background-image: url(../Components/Img/tic_tac_toe.gif);
 }
 .RPS::after{
-    background-image: url(../Img/rock\,_paper_larger.jpg);
+    background-image: url(../Components/Img/rock\,_paper_larger.jpg);
 }
 .GG::after{
-    background-image: url(../Img/question.png);
+    background-image: url(../Components/Img/question.png);
 }
 .AG::after{
-    background-image: url(../Img/boombox_background.jpg)
+    background-image: url(../Components/Img/boombox_background.jpg)
 }
 .card{
     width:  100%;

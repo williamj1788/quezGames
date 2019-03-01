@@ -1,9 +1,9 @@
 import React from 'react';
 
-var rock = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/Rock.png");
-var paper = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/Paper.png");
-var scissors = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/sci.png");
-var white = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/White.jpg");
+var rock = require("../Img/Rock.png");
+var paper = require("../Img/Paper.png");
+var scissors = require("../Img/sci.png");
+var white = require("../Img/White.jpg");
 
 export default class RPSPlayer extends React.Component{
     constructor(props){

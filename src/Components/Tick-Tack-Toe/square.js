@@ -1,6 +1,6 @@
 import React from 'react';
-var player = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/x.png");
-var computer = require("C:/Users/deathkiller101x/Desktop/Projects/Websites/quezgame/src/Img/BlueCircle.png");
+import player from '../Img/x.png';
+import computer from '../Img/BlueCircle.png';
 
 export default class Square extends React.Component{
     constructor(props){
