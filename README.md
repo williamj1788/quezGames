@@ -12,8 +12,8 @@ cd quezGames
 npm install
 npm start
 ```
-The project show open up in a new tab
+The project should show open up in a new tab
 
-If it doesn't, you can view on localhost 3001
+If it doesn't, you can view it on localhost 3001
 
 Happy Coding
