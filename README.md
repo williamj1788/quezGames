@@ -39,6 +39,8 @@ If it doesn't, you can view it on localhost 3001
 
 ## Pages
 
+> You can view this website [here](https://quezgame.herokuapp.com)
+
 ### Home
 
 ![Home](./Home.png)
