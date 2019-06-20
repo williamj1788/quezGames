@@ -2,7 +2,7 @@
 
 ## Description
 
-> I simple gaming website that I made which allows you playing some basic games like
+> A simple gaming website that I made which allows you playing some basic games like
 >
 > 1. Tick Tack Toe
 > 1. Rock Paper Scissors
@@ -12,6 +12,9 @@
 ## Timeline 
 
 > February 5, 2019 - February 15, 2019
+>
+> June 20, 2019
+> * Edit Text based Adventure Game
 
 ## Technology
 
