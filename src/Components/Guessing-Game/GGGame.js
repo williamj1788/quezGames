@@ -2,6 +2,7 @@ import React from 'react';
 import GGGuessWord from './GGGuessWord';
 import GGGuessedWord from './GGGuessedWord';
 import GGInput from './GGInput';
+import keys from '../../key';
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -68,14 +69,13 @@ export default class GGGame extends React.Component{
         return new Promise((resolve,reject) =>{
             let xhr = new XMLHttpRequest();
             let api = "https://wordsapiv1.p.mashape.com/words";
-            let wordQuery = '/?lettersMax=10&hasDetails=synonyms,antonyms&random=true&limit=3&lettersMin=5';
-            let key = "fb850a2b20mshfb7dc9250b5eec9p1d2a9cjsn25e22afe10b8";
+            let wordQuery = '/?lettersMax=10&random=true&limit=3&lettersMin=5';
             xhr.onload = () => {
                 let data = JSON.parse(xhr.response);
                 resolve(data);
             }
             xhr.open('GET',api + wordQuery,true);
-            xhr.setRequestHeader("X-RapidAPI-Key", key);
+            xhr.setRequestHeader("X-RapidAPI-Key", keys.WordAPIKey);
             xhr.send();
         })
     }
@@ -130,7 +130,6 @@ export default class GGGame extends React.Component{
             for(let element1 of string1Array){
                 if(element1 === element2 && tracker.indexOf(element1) === -1){
                     tracker.push(element2);
-                    console.log(element1,element2);
                     count++;
                     break;
                 }

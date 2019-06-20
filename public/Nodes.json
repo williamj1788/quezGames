@@ -67,7 +67,7 @@
         },
         {
             "id": "123",
-            "natText": "Soon after you take off, a HUGE wave smashes you boat into pieces and you later drown. Your death was slow and painful",
+            "natText": "Soon after you take off, a HUGE wave smashes you boat into pieces and you later drown.",
             "options": [
                 {
                     "text": "Game Over! (click to play again)",
@@ -136,7 +136,7 @@
         },
         {
             "id": "3",
-            "natText": "After a long journey, you see a shady fellow in the distance",
+            "natText": "After a long journey, you see a shady fellow in the distance.",
             "options": [
                 {
                     "text": "Go talk to him",
@@ -144,14 +144,28 @@
                 },
                 {
                     "text": "Keep going",
-                    "dest": "32"
+                    "dest": "312"
                 }
             ]
         },
         {
             "id": "31",
-            "natText": "We have a pleasant chat and as soon as you turn your back, he pulls out a large knife, stabs you in the back and takes your money.",
+            "natText": "You have a pleasant chat with the man. As it turns out, the man is a wealthy noble in disguise.",
             "options": [
+                {
+                    "text": "Talk some more",
+                    "dest": "311"
+                },
+                {
+                    "text": "Continue on your journey",
+                    "dest": "312"
+                }
+            ]
+        },
+        {
+            "id": "311",
+            "natText": "You quickly become friends with the noble and decide to travel back to his homeland with him.",
+            "options":[
                 {
                     "text": "Game Over! (click to play again)",
                     "dest": "start"
@@ -159,23 +173,33 @@
             ]
         },
         {
-            "id": "32",
-            "natText": "You keep going, but soon realizes that the man has been following you",
+            "id": "312",
+            "natText": "You keep going, but soon you come across an even shadier fellow. He postures as if he doesn't want you to pass.",
+            "options":[
+                {
+                    "text": "Talk to him",
+                    "dest": "3121"
+                }
+            ]
+        },
+        {
+            "id": "3121",
+            "natText": "As you begin to approach the man, he rushes you with knife in hand!",
             "options": [
                 {
                     "text": "Face him!",
-                    "dest": "321"
+                    "dest": "31211"
                 },
                 {
-                    "text": "Keep walking",
-                    "dest": "322"
+                    "text": "Run away!",
+                    "dest": "31212"
                 }
             ]
         },
         {
-            "id": "321",
-            "natText": "You decide to face him, but he is well armed and you fall to his blade. He takes your money",
-            "options": [
+            "id": "31211",
+            "natText": "You decide to face him, but you are no match for him, as you are only a simple farmer, and quickly fall to him.",
+            "options":[
                 {
                     "text": "Game Over! (click to play again)",
                     "dest": "start"
@@ -183,15 +207,14 @@
             ]
         },
         {
-            "id": "322",
-            "natText": "The man quickly catches up to you and pulls out a knife. He stabs you while you weren't looking and takes you money.",
-            "options": [
+            "id": "31212",
+            "natText": "You decide to run away, but he quickly catches up to you.",
+            "options":[
                 {
-                    "text": "Game Over! (click to play again)",
-                    "dest": "start"
+                    "text": "Face him!",
+                    "dest": "31211"
                 }
             ]
         }
-
     ]
 }

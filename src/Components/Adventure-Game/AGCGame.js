@@ -49,13 +49,13 @@ export default class AGCGame extends React.Component{
         }
         if(option.modifier){
             if(option.modifier === 'drunk'){
-                nodes[nodes.indexOf(this.findNode('11'))].natText = "You somehow manage to get an audience with the king, but your drunkness offends him. He orders your immediate execution. Your death was quick";
+                nodes[nodes.indexOf(this.findNode('11'))].natText = "You somehow manage to get an audience with the king, but your drunkness offends him. He orders the guards to throw you in jail where you shall spend the rest of your days.";
                 nodes[nodes.indexOf(this.findNode('12'))].options[1] = {
                     text: "Buy the medium boat",
                     altText: "You spent too much money at the tavern and cant afford the ship",
                 };
             }else if(option.modifier === 'mauled'){
-                nodes[nodes.indexOf(this.findNode('2'))].natText = "By some miracle, you manage to fend off the bear, but you are wounded in the processes.";
+                nodes[nodes.indexOf(this.findNode('2'))].natText = "By some miracle, you manage to fend off the bear, but you are wounded in the process.";
                 nodes[nodes.indexOf(this.findNode('2'))].options.splice(0,1);
                 nodes[nodes.indexOf(this.findNode('22'))].natText = "You find a random wolf. Since you are already badly wounded, it makes quick work of you. Maybe going into the woods was a bad idea."
             }

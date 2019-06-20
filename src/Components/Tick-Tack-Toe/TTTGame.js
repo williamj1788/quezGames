@@ -103,13 +103,10 @@ export default class TTTGame extends React.Component{
             square8: "none",
             square9: "none",
         }, callback);
-        console.log("Clear!");
-        // console.log(this.state.numberOfSquaresActive);
     }
     
     computerTurn(){
         if(this.getNumberOfSquaresActive() < 9){
-            console.log("Computer turn");
             let number = getRandomInt(1, 10);
             let tempState = "square" + number;
             if(this.state[tempState] === "none"){
@@ -122,7 +119,6 @@ export default class TTTGame extends React.Component{
     }
     incrementNumberOfSquaresActive(callback){
         this.setState({numberOfSquaresActive: this.state.numberOfSquaresActive + 1}, callback);
-        // console.log("State incremetned");
     }
     
     setActivetoPlayer(num){
@@ -137,16 +133,12 @@ export default class TTTGame extends React.Component{
         let propety = "square" + num;
         this.setState({[propety]: "computer",}, () => {
             this.incrementNumberOfSquaresActive();
-            // console.log(this.state[propety] + "at" + num);  
         });
         
     }
 
     
     render(){
-        console.log('Number of active squares: ' + this.state.numberOfSquaresActive);
-        // console.log("Computer Number before update: " + this.state.computerNum)
-        // console.log(this.state);
         return(
             <div id="TTTGrid">
                 <Square num={1} SquareList={this.state.square1} onClick={this.setActivetoPlayer} />

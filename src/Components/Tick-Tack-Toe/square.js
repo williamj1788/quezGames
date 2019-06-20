@@ -9,7 +9,6 @@ export default class Square extends React.Component{
         this.handleOnClick = this.handleOnClick.bind(this);
     }
     changeImg(){
-        // console.log(this.props.SquareList);
         switch(this.props.SquareList){
             case "none":
                 return "";
@@ -26,8 +25,6 @@ export default class Square extends React.Component{
     }
     
     render(){
-        // console.log("Square has been updated");
-        // console.log("Square has been updated" + this.changeImg());
         return(
             <div className="square" id={"square"+ this.props.num} style={{backgroundImage: "url(" + this.changeImg() + ")"}} onClick={this.handleOnClick}>
                 
