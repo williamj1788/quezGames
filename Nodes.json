@@ -1,0 +1,220 @@
+{
+    "nodes":[
+        {
+            "id": "start",
+            "natText": "You are a single farmer that has gotten bored with his mundane life. So you decide to sell your house and land to set out for an adventure. What do you do next?",
+            "options": [
+                {
+                    "text": "Visit the town",
+                    "dest": "1"
+                },
+                {
+                    "text": "Go into the woods",
+                    "dest": "2"
+                },
+                {
+                    "text": "Travel on the southern road",
+                    "dest": "3"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "natText": "After a long journey, you finally reach the town. Where do you go next?",
+            "options": [
+                {
+                    "text": "Visit the king",
+                    "dest": "11"
+                },
+                {
+                    "text": "Visit the seaport",
+                    "dest": "12"
+                },
+                {
+                    "text": "Visit the tavern",
+                    "altText": "You visit the tavern and order a drink... and other... and other. Soon you are low on money and leave the tavern completely drunk.",
+                    "modifier": "drunk"
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "natText": "You visit the seaport and talk to the quartermaster. You soon find out that he has 3 ships for sale and sensing the opportunity, you offer to buy one.",
+            "options": [
+                {
+                    "text": "Buy the large ship",
+                    "altText": "The ship is too expensive. You must offer to buy another one."
+                },
+                {
+                    "text": "Buy the medium ship",
+                    "dest": "122"
+                },
+                {
+                    "text": "Buy the small boat",
+                    "dest": "123"
+                }
+            ]
+        },
+        {
+            "id": "122",
+            "natText": "You use the last of your money and buy the ship. You spend the rest of your life as a traveling merchant",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "123",
+            "natText": "Soon after you take off, a HUGE wave smashes you boat into pieces and you later drown.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "natText": "You somehow manage to get an audience with the king and you offer to become a knight. He is impressed by your braveness and grants your request. You live the rest of your life as the king's personal bodyguard.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "natText": "You head into the woods and find there are two paths to take",
+            "options": [
+                {
+                    "text": "Go left",
+                    "dest": "21"
+                },
+                {
+                    "text": "Go right",
+                    "dest": "22"
+                }
+            ]
+        },
+        {
+            "id": "22",
+            "natText": "You find a random wolf and it immediately attacks you. You manage to fend it off, but you are bleeding massively and eventually die of blood loss.",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "21",
+            "natText": "You are met by a HUGE black bear and it immediately charges you!",
+            "options": [
+                {
+                    "text": "Stand you ground",
+                    "dest": "2",
+                    "modifier": "mauled"
+                },
+                {
+                    "text": "Run away",
+                    "dest": "222"
+                }
+            ]
+        },
+        {
+            "id": "222",
+            "natText": "The bear manages to catch up to you and mauls you to death. It was very painful",
+            "options": [
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "natText": "After a long journey, you see a shady fellow in the distance.",
+            "options": [
+                {
+                    "text": "Go talk to him",
+                    "dest": "31"
+                },
+                {
+                    "text": "Keep going",
+                    "dest": "312"
+                }
+            ]
+        },
+        {
+            "id": "31",
+            "natText": "You have a pleasant chat with the man. As it turns out, the man is a wealthy noble in disguise.",
+            "options": [
+                {
+                    "text": "Talk some more",
+                    "dest": "311"
+                },
+                {
+                    "text": "Continue on your journey",
+                    "dest": "312"
+                }
+            ]
+        },
+        {
+            "id": "311",
+            "natText": "You quickly become friends with the noble and decide to travel back to his homeland with him.",
+            "options":[
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "312",
+            "natText": "You keep going, but soon you come across an even shadier fellow. He postures as if he doesn't want you to pass.",
+            "options":[
+                {
+                    "text": "Talk to him",
+                    "dest": "3121"
+                }
+            ]
+        },
+        {
+            "id": "3121",
+            "natText": "As you begin to approach the man, he rushes you with knife in hand!",
+            "options": [
+                {
+                    "text": "Face him!",
+                    "dest": "31211"
+                },
+                {
+                    "text": "Run away!",
+                    "dest": "31212"
+                }
+            ]
+        },
+        {
+            "id": "31211",
+            "natText": "You decide to face him, but you are no match for him, as you are only a simple farmer, and quickly fall to him.",
+            "options":[
+                {
+                    "text": "Game Over! (click to play again)",
+                    "dest": "start"
+                }
+            ]
+        },
+        {
+            "id": "31212",
+            "natText": "You decide to run away, but he quickly catches up to you.",
+            "options":[
+                {
+                    "text": "Face him!",
+                    "dest": "31211"
+                }
+            ]
+        }
+    ]
+}
