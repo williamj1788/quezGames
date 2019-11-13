@@ -42,7 +42,7 @@ If it doesn't, you can view it on localhost 3001
 
 ## Pages
 
-> You can view this website [here](https://quezgame.herokuapp.com)
+> You can view this website [here](https://williamj1788.github.io/quezGames)
 
 ### Home
 
