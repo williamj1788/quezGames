@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/quezGames/static/media/BlueCircle.11a067f2.png"
   },
   {
-    "revision": "db1c847c53793c15e0e2",
+    "revision": "b4398fad576cc04667cb",
     "url": "/quezGames/static/css/main.0799ec6e.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/quezGames/static/media/x.5e6b6fb4.png"
   },
   {
-    "revision": "db1c847c53793c15e0e2",
-    "url": "/quezGames/static/js/main.db1c847c.chunk.js"
+    "revision": "b4398fad576cc04667cb",
+    "url": "/quezGames/static/js/main.b4398fad.chunk.js"
   },
   {
     "revision": "4e7360ce6cd16243875d767175d63f5c",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/quezGames/static/media/boombox_background.a72cefff.jpg"
   },
   {
-    "revision": "d6b915e90418805890737da3b5c97e6c",
+    "revision": "d294d77f3ff52259ae194632e44b5d33",
     "url": "/quezGames/index.html"
   }
 ];
