@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/quezGames/precache-manifest.dfbe20568a5fabc93c7ae22fb2b9ae9a.js"
+  "/quezGames/precache-manifest.b66a8c62b3ab5371b375392bf2c06fc2.js"
 );
 
 workbox.clientsClaim();
