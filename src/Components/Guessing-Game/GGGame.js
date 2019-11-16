@@ -17,7 +17,7 @@ export default class GGGame extends React.Component{
             title: "I'm Thinking Of A Word",
             word: "some",
             GWords: [],
-            hints: 4,
+            hints: 3,
             Guesses: 10,
             wordIndex: [],
         }
@@ -41,6 +41,7 @@ export default class GGGame extends React.Component{
             }
             currentComponent.setState({
                 word: value.word,
+                hints: value.word.length <= 3 ? 0 : value.word.length >= 7 ? 4 : value.word.length - 3,
                 wordIndex: [number1,number2]
             }, (() => {console.log(value.word)})); 
         }
@@ -69,7 +70,7 @@ export default class GGGame extends React.Component{
         return new Promise((resolve,reject) =>{
             let xhr = new XMLHttpRequest();
             let api = "https://wordsapiv1.p.mashape.com/words";
-            let wordQuery = '/?lettersMax=10&random=true&limit=3&lettersMin=5';
+            let wordQuery = '/?lettersMin=3&lettersMax=15&frequencyMin=5&letterPattern=^[^0-9\\s]{3,15}$&random=true';//letterPattern=^[^0-9]+$
             xhr.onload = () => {
                 let data = JSON.parse(xhr.response);
                 resolve(data);
@@ -94,11 +95,11 @@ export default class GGGame extends React.Component{
                 currentComponent.setState({
                     title: "That was the correct word",
                     GWords: [],
-                    hints: 4,
+                    hints: value.word.length <= 3 ? 0 : value.word.length >= 7 ? 4 : value.word.length - 3,
                     Guesses: 10,
                     word: value.word,
                     wordIndex: [number1,number2]
-                });  
+                }, () => {console.log(value.word)});  
             }
         }else{
             let promise = this.getNewWordPromise();
@@ -112,7 +113,7 @@ export default class GGGame extends React.Component{
                 currentComponent.setState({
                     title: "Out of Guesses! The Right Word Was: " + currentComponent.state.word,
                     GWords: [],
-                    hints: 4,
+                    hints: value.word.length <= 5 ? 0 : value.word.length >= 9 ? 4 : value.word.length - 5,
                     Guesses: 10,
                     word: value.word,
                     wordIndex: [number1,number2]
@@ -134,6 +135,7 @@ export default class GGGame extends React.Component{
                     break;
                 }
             }
+            tracker = []
         }
         return count;
     }
