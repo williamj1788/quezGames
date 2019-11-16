@@ -41,7 +41,7 @@ export default class GGGame extends React.Component{
             }
             currentComponent.setState({
                 word: value.word,
-                hints: value.word.length <= 3 ? 0 : value.word.length >= 7 ? 4 : value.word.length - 3,
+                hints: value.word.length <= 5 ? 0 : value.word.length >= 9 ? 4 : value.word.length - 5,
                 wordIndex: [number1,number2]
             }, (() => {console.log(value.word)})); 
         }
@@ -95,7 +95,7 @@ export default class GGGame extends React.Component{
                 currentComponent.setState({
                     title: "That was the correct word",
                     GWords: [],
-                    hints: value.word.length <= 3 ? 0 : value.word.length >= 7 ? 4 : value.word.length - 3,
+                    hints: value.word.length <= 5 ? 0 : value.word.length >= 9 ? 4 : value.word.length - 5,
                     Guesses: 10,
                     word: value.word,
                     wordIndex: [number1,number2]
