@@ -57,7 +57,7 @@ body{
     background-image: url(../Components/Img/tic_tac_toe.gif);
 }
 .RPS::after{
-    background-image: url(../Components/Img/rock\,_paper_larger.jpg);
+    background-image: url(../Components/Img/rock,_paper_larger.jpg);
 }
 .GG::after{
     background-image: url(../Components/Img/question.png);

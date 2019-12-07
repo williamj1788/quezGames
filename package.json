@@ -1,6 +1,6 @@
 {
   "name": "quezgame",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.12.0",
@@ -27,6 +27,7 @@
   ],
   "homepage": "https://williamj1788.github.io/quezGames",
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "prettier": "^1.19.1"
   }
 }
