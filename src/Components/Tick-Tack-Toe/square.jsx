@@ -22,5 +22,4 @@ function Square({ onClick, positionState }) {
     ></div>
   );
 }
-
 export default Square;
