@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import RPSPlayer from "./RPSPlayer";
 
 function getRandomInt(min, max) {
@@ -7,205 +7,142 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export default class RPSGame extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      player: {
-        score: 0,
-        play: "none"
+function RPSGame() {
+  const [player, setPlayer] = useState({
+    score: 0,
+    play: "none"
+  });
+  const [computer, setComputer] = useState({
+    score: 0,
+    play: "none"
+  });
+  const [gameTitle, setGameTitle] = useState({
+    text: "Let's begin!",
+    color: "#000000"
+  });
+  const [isComputerThink, setIsComputerThink] = useState(false);
+  const [isMounting, setIsMounting] = useState(true);
+
+  useEffect(() => {
+    if (isMounting) {
+      return setIsMounting(false);
+    }
+    choosePlayForComputer();
+  }, [player.play]);
+
+  useEffect(() => {
+    if (isMounting) {
+      return setIsMounting(false);
+    }
+    decideWhoWins();
+  }, [computer.play]);
+
+  function decideWhoWins() {
+    if (player.play === computer.play) {
+      return declareWinner("Draw");
+    }
+
+    const rules = {
+      rock: {
+        scissors: true,
+        paper: false
       },
-      computer: {
-        score: 0,
-        play: "none"
+      paper: {
+        rock: true,
+        scissors: false
       },
-      winner: {
-        text: "Let's begin!",
-        color: "#000000"
+      scissors: {
+        paper: true,
+        rock: false
       }
     };
-    this.choosePlayForPlayer = this.choosePlayForPlayer.bind(this);
-    this.choosePlayForComputer = this.choosePlayForComputer.bind(this);
-    this.decideWhoWins = this.decideWhoWins.bind(this);
+
+    declareWinner(rules[player.play][computer.play] ? "Player" : "Computer");
   }
 
-  choosePlayForPlayer(play) {
-    this.setState(
-      {
-        player: {
-          score: this.state.player.score,
-          play: play
-        }
-      },
-      this.choosePlayForComputer
-    );
-  }
-
-  choosePlayForComputer() {
-    let num = getRandomInt(1, 4);
-    let play;
-    if (num === 1) {
-      play = "rock";
-    } else if (num === 2) {
-      play = "paper";
-    } else {
-      play = "scissors";
+  function declareWinner(winner) {
+    if (winner === "Player") {
+      setPlayer({ ...player, score: player.score + 1 });
     }
-    this.setState(
-      {
-        computer: {
-          score: this.state.computer.score,
-          play: play
-        }
-      },
-      this.decideWhoWins
-    );
-  }
+    if (winner === "Computer") {
+      setComputer({ ...computer, score: computer.score + 1 });
+    }
+    setGameTitle({
+      text: winner === "Draw" ? "Draw!" : `${winner} Wins`,
+      color: determineColor()
+    });
 
-  decideWhoWins() {
-    let player = this.state.player.play;
-    let computer = this.state.computer.play;
-    if (player === "rock" && computer === "scissors") {
-      this.setState({
-        player: {
-          score: this.state.player.score + 1,
-          play: this.state.player.play
-        },
-        winner: {
-          text: "Player Wins!",
-          color: "#00ADF9"
-        }
-      });
-    } else if (player === "rock" && computer === "paper") {
-      this.setState({
-        computer: {
-          score: this.state.computer.score + 1,
-          play: this.state.computer.play
-        },
-        winner: {
-          text: "Computer Wins!",
-          color: "#FF0000"
-        }
-      });
-    } else if (player === "rock" && computer === "rock") {
-      this.setState({
-        winner: {
-          text: "Draw!",
-          color: "#000000"
-        }
-      });
-    } else if (player === "paper" && computer === "rock") {
-      this.setState({
-        player: {
-          score: this.state.player.score + 1,
-          play: this.state.player.play
-        },
-        winner: {
-          text: "Player Wins!",
-          color: "#00ADF9"
-        }
-      });
-    } else if (player === "paper" && computer === "scissors") {
-      this.setState({
-        computer: {
-          score: this.state.computer.score + 1,
-          play: this.state.computer.play
-        },
-        winner: {
-          text: "Computer Wins!",
-          color: "#FF0000"
-        }
-      });
-    } else if (player === "paper" && computer === "paper") {
-      this.setState({
-        winner: {
-          text: "Draw!",
-          color: "#000000"
-        }
-      });
-    } else if (player === "scissors" && computer === "paper") {
-      this.setState({
-        player: {
-          score: this.state.player.score + 1,
-          play: this.state.player.play
-        },
-        winner: {
-          text: "Player Wins!",
-          color: "#00ADF9"
-        }
-      });
-    } else if (player === "scissors" && computer === "rock") {
-      this.setState({
-        computer: {
-          score: this.state.computer.score + 1,
-          play: this.state.computer.play
-        },
-        winner: {
-          text: "Computer Wins!",
-          color: "#FF0000"
-        }
-      });
-    } else if (player === "scissors" && computer === "scissors") {
-      this.setState({
-        winner: {
-          text: "Draw!",
-          color: "#000000"
-        }
-      });
-    } else {
-      alert("What happen!");
+    function determineColor() {
+      switch (winner) {
+        case "Player":
+          return "#00ADF9";
+        case "Computer":
+          return "#FF0000";
+        case "Draw":
+          return "#000000";
+      }
     }
   }
 
-  render() {
-    return (
-      <div className="RPS-Game">
-        <div id="RPS-container">
-          <RPSPlayer
-            color={"#00ADF9"}
-            player={"Player"}
-            score={this.state.player.score}
-            play={this.state.player.play}
-          />
-          <div>
-            <p id="RPS-winner" style={{ color: this.state.winner.color }}>
-              {this.state.winner.text}
-            </p>
-          </div>
-          <RPSPlayer
-            color={"#FF0000"}
-            player={"Computer"}
-            score={this.state.computer.score}
-            play={this.state.computer.play}
-          />
+  function choosePlayForComputer() {
+    setIsComputerThink(true);
+    setTimeout(() => {
+      switch (getRandomInt(1, 4)) {
+        case 1:
+          setComputer({ ...computer, play: "rock" });
+          break;
+        case 2:
+          setComputer({ ...computer, play: "paper" });
+          break;
+        default:
+          setComputer({ ...computer, play: "scissors" });
+      }
+      setIsComputerThink(false);
+    }, 300);
+  }
+
+  function handleOnClick(play) {
+    if (!isComputerThink) {
+      setPlayer({ ...player, play });
+    }
+  }
+
+  return (
+    <div className="RPS-Game">
+      <div id="RPS-container">
+        <RPSPlayer
+          color={"#00ADF9"}
+          player={"Player"}
+          score={player.score}
+          play={player.play}
+        />
+        <div>
+          <p id="RPS-winner" style={{ color: gameTitle.color }}>
+            {gameTitle.text}
+          </p>
         </div>
-        <div id="RPS-button-container">
-          <button
-            className="RPS-button"
-            onClick={() => {
-              this.choosePlayForPlayer("rock");
-            }}
-          >
-            Rock
-          </button>
-          <button
-            className="RPS-button"
-            onClick={() => {
-              this.choosePlayForPlayer("paper");
-            }}
-          >
-            Paper
-          </button>
-          <button
-            className="RPS-button"
-            onClick={() => {
-              this.choosePlayForPlayer("scissors");
-            }}
-          >
-            Scissors
-          </button>
-        </div>
+        <RPSPlayer
+          color={"#FF0000"}
+          player={"Computer"}
+          score={computer.score}
+          play={computer.play}
+        />
       </div>
-    );
-  }
+      <div id="RPS-button-container">
+        <button className="RPS-button" onClick={() => handleOnClick("rock")}>
+          Rock
+        </button>
+        <button className="RPS-button" onClick={() => handleOnClick("paper")}>
+          Paper
+        </button>
+        <button
+          className="RPS-button"
+          onClick={() => handleOnClick("scissors")}
+        >
+          Scissors
+        </button>
+      </div>
+    </div>
+  );
 }
+export default RPSGame;
