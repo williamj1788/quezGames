@@ -1,6 +1,32 @@
 import React, { useState } from "react";
 import TTTGame from "./TTTGame";
 
+function TTT() {
+  const [playerScore, setPlayerScore] = useState(0);
+  const [computerScore, setComputerScore] = useState(0);
+  const [scoreTitle, setScoreTitle] = useState("The Game Has Began!");
+
+  function declareWinner(player) {
+    if (player === "player") {
+      incrementPlayerScore();
+    } else if (player === "computer") {
+      incrementComputerScore();
+    } else {
+      setScoreTitle("There Was A Tied");
+    }
+  }
+
+  function incrementPlayerScore() {
+    setPlayerScore(s => s + 1);
+    setScoreTitle("The Player Has Won!");
+  }
+
+  function incrementComputerScore() {
+    setComputerScore(s => s + 1);
+    setScoreTitle("The Computer Has Won!");
+  }
+}
+
 export default class TTT extends React.Component {
   constructor(props) {
     super(props);
