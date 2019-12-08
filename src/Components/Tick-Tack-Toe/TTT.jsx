@@ -51,3 +51,5 @@ function TTT({ onClick }) {
     </div>
   );
 }
+
+export default TTT;

@@ -14,14 +14,9 @@ function TTTGame({ declareWinner }) {
     ["empty", "empty", "empty"]
   ]);
   const [isComputerThinking, setIsComputerThinking] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
+  const [isPlayerTurn, setIsPlayerTurn] = useState(false);
 
   useEffect(() => {
-    if (!isMounted) {
-      setIsMounted(true);
-      return;
-    }
     if (isWinner("player")) {
       declareWinner("player");
       resetBoard();
@@ -47,11 +42,10 @@ function TTTGame({ declareWinner }) {
 
   function isWinner(value) {
     if (value === "tie") {
-      return (
-        gameBoard
-          .map(arr => arr.filter(posState => posState !== "empty"))
-          .reduce((acc, arr) => acc + arr.length, 0) >= 9
-      );
+      const activePosCount = gameBoard
+        .map(arr => arr.filter(posState => posState !== "empty"))
+        .reduce((acc, arr) => acc + arr.length, 0);
+      return activePosCount >= 9;
     }
 
     for (let i = 0; i < 3; i++) {
