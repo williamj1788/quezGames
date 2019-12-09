@@ -21,21 +21,22 @@ function RPSGame() {
     color: "#000000"
   });
   const [isComputerThink, setIsComputerThink] = useState(false);
-  const [isMounting, setIsMounting] = useState(true);
+  const [playerTurn, setPlayerTurn] = useState(true);
 
   useEffect(() => {
-    if (isMounting) {
-      return setIsMounting(false);
+    if (playerTurn) {
+      return;
     }
     choosePlayForComputer();
-  }, [player.play]);
+  }, [player]);
 
   useEffect(() => {
-    if (isMounting) {
-      return setIsMounting(false);
+    if (playerTurn || computer.play === "none") {
+      return;
     }
+
     decideWhoWins();
-  }, [computer.play]);
+  }, [computer]);
 
   function decideWhoWins() {
     if (player.play === computer.play) {
@@ -56,7 +57,6 @@ function RPSGame() {
         rock: false
       }
     };
-
     declareWinner(rules[player.play][computer.play] ? "Player" : "Computer");
   }
 
@@ -71,6 +71,7 @@ function RPSGame() {
       text: winner === "Draw" ? "Draw!" : `${winner} Wins`,
       color: determineColor()
     });
+    setPlayerTurn(true);
 
     function determineColor() {
       switch (winner) {
@@ -86,6 +87,9 @@ function RPSGame() {
 
   function choosePlayForComputer() {
     setIsComputerThink(true);
+    setComputer({ ...computer, play: "none" });
+    setGameTitle({ ...gameTitle, text: "" });
+
     setTimeout(() => {
       switch (getRandomInt(1, 4)) {
         case 1:
@@ -98,12 +102,13 @@ function RPSGame() {
           setComputer({ ...computer, play: "scissors" });
       }
       setIsComputerThink(false);
-    }, 300);
+    }, 200);
   }
 
   function handleOnClick(play) {
     if (!isComputerThink) {
       setPlayer({ ...player, play });
+      setPlayerTurn(false);
     }
   }
 

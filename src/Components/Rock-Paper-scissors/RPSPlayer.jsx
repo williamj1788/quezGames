@@ -1,56 +1,40 @@
 import React from "react";
 
-var rock = require("../Img/Rock.png");
-var paper = require("../Img/Paper.png");
-var scissors = require("../Img/sci.png");
-var white = require("../Img/White.jpg");
+import rock from "../Img/Rock.png";
+import paper from "../Img/Paper.png";
+import scissors from "../Img/sci.png";
+import white from "../Img/White.jpg";
 
-export default class RPSPlayer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.changeImg = this.changeImg.bind(this);
-  }
-  changeImg(play) {
-    if (play === "rock") {
-      return rock;
-    } else if (play === "paper") {
-      return paper;
-    } else if (play === "scissors") {
-      return scissors;
-    } else {
-      return white;
+function RPSPlayer({ player, color, score, play }) {
+  function determineImg(play) {
+    switch (play) {
+      case "rock":
+        return rock;
+      case "paper":
+        return paper;
+      case "scissors":
+        return scissors;
+      default:
+        return white;
     }
   }
 
-  render() {
-    return (
-      <div className="RPS-player">
-        <div className="score-div">
-          <span
-            className="RPS-player-score"
-            style={{ color: this.props.color }}
-          >
-            {this.props.player + ":"}{" "}
-          </span>
-          <span
-            className="RPS-player-score"
-            style={{ color: this.props.color }}
-          >
-            {this.props.score}
-          </span>
-        </div>
-        <img
-          className="RPS-imgs"
-          src={this.changeImg(this.props.play)}
-          alt=""
-        />
-        <p
-          className="RPS-player-score"
-          style={{ color: this.props.color, textAlign: "center" }}
-        >
-          {this.props.play}
-        </p>
+  return (
+    <div className="RPS-player">
+      <div className="score-div">
+        <span className="RPS-player-score" style={{ color }}>
+          {player + ":"}
+        </span>
+        <span className="RPS-player-score" style={{ color }}>
+          {score}
+        </span>
       </div>
-    );
-  }
+      <img className="RPS-imgs" src={determineImg(play)} alt="" />
+      <p className="RPS-player-score" style={{ color, textAlign: "center" }}>
+        {play}
+      </p>
+    </div>
+  );
 }
+
+export default RPSPlayer;
