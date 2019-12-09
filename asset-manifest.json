@@ -1,17 +1,25 @@
 {
-  "main.css": "/quezGames/static/css/main.0799ec6e.chunk.css",
-  "main.js": "/quezGames/static/js/main.3c5a36b4.chunk.js",
-  "main.js.map": "/quezGames/static/js/main.3c5a36b4.chunk.js.map",
-  "static/js/1.ee08a363.chunk.js": "/quezGames/static/js/1.ee08a363.chunk.js",
-  "static/js/1.ee08a363.chunk.js.map": "/quezGames/static/js/1.ee08a363.chunk.js.map",
-  "runtime~main.js": "/quezGames/static/js/runtime~main.5149f154.js",
-  "runtime~main.js.map": "/quezGames/static/js/runtime~main.5149f154.js.map",
-  "static/media/TTTGameStyle.css": "/quezGames/static/media/x.5e6b6fb4.png",
-  "static/media/White.jpg": "/quezGames/static/media/White.4e7360ce.jpg",
-  "static/media/HomeStyle.css": "/quezGames/static/media/boombox_background.a72cefff.jpg",
-  "static/media/BlueCircle.png": "/quezGames/static/media/BlueCircle.11a067f2.png",
-  "static/css/main.0799ec6e.chunk.css.map": "/quezGames/static/css/main.0799ec6e.chunk.css.map",
-  "index.html": "/quezGames/index.html",
-  "precache-manifest.b66a8c62b3ab5371b375392bf2c06fc2.js": "/quezGames/precache-manifest.b66a8c62b3ab5371b375392bf2c06fc2.js",
-  "service-worker.js": "/quezGames/service-worker.js"
+  "files": {
+    "main.css": "/quezGames/static/css/main.6bf0c585.chunk.css",
+    "main.js": "/quezGames/static/js/main.ee56ce0d.chunk.js",
+    "main.js.map": "/quezGames/static/js/main.ee56ce0d.chunk.js.map",
+    "runtime-main.js": "/quezGames/static/js/runtime-main.67788627.js",
+    "runtime-main.js.map": "/quezGames/static/js/runtime-main.67788627.js.map",
+    "static/js/2.282b6f1e.chunk.js": "/quezGames/static/js/2.282b6f1e.chunk.js",
+    "static/js/2.282b6f1e.chunk.js.map": "/quezGames/static/js/2.282b6f1e.chunk.js.map",
+    "index.html": "/quezGames/index.html",
+    "precache-manifest.0a2eac0be0a5c485b5c1209ffe40f789.js": "/quezGames/precache-manifest.0a2eac0be0a5c485b5c1209ffe40f789.js",
+    "service-worker.js": "/quezGames/service-worker.js",
+    "static/css/main.6bf0c585.chunk.css.map": "/quezGames/static/css/main.6bf0c585.chunk.css.map",
+    "static/media/BlueCircle.png": "/quezGames/static/media/BlueCircle.11a067f2.png",
+    "static/media/White.jpg": "/quezGames/static/media/White.4e7360ce.jpg",
+    "static/media/HomeStyle.css": "/quezGames/static/media/tic_tac_toe.0e73a56f.gif",
+    "static/media/TTTGameStyle.css": "/quezGames/static/media/x.5e6b6fb4.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67788627.js",
+    "static/js/2.282b6f1e.chunk.js",
+    "static/css/main.6bf0c585.chunk.css",
+    "static/js/main.ee56ce0d.chunk.js"
+  ]
 }
