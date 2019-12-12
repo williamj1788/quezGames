@@ -12,7 +12,7 @@ export default class TTTCard extends React.Component {
   render() {
     return (
       <div className="TTT card" onClick={this.handleClick}>
-        <h3 className="card-title">Tick Tack Toe</h3>
+        <h3 className="card-title">Tic Tac Toe</h3>
         <h3 className="card-description">
           Click to play a classic game of Tic Tac Toe
         </h3>

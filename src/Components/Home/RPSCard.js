@@ -14,7 +14,7 @@ export default class RPSCard extends React.Component {
       <div className="RPS card" onClick={this.handleClick}>
         <h3 className="card-title">Rock Paper Scissors</h3>
         <h3 className="card-description">
-          Click to play A classic game of Rock Paper Scissors
+          Click to play a classic game of Rock Paper Scissors
         </h3>
       </div>
     );
