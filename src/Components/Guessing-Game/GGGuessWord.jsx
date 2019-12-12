@@ -1,19 +1,22 @@
 import React from "react";
 
-export default class GGGuessWord extends React.Component {
-  render() {
-    let wordChars = this.props.word[0].split("");
-    wordChars = wordChars.map((item, index) => {
-      let display = "hidden";
-      if (this.props.word[1].indexOf(index) !== -1) {
-        display = "";
-      }
-      return (
-        <div className="GGGame-GuessWord-Character" key={item + index}>
-          <span style={{ visibility: display }}>{item}</span>
+function GGGuessWord({ word }) {
+  const [wordString, wordIndexArr] = word;
+  return (
+    <div className="GGGame-GuessWord-Container">
+      {wordString.split("").map((char, i) => (
+        <div className="GGGame-GuessWord-Character" key={i}>
+          <span
+            style={{
+              visibility: wordIndexArr.indexOf(i) !== -1 ? "" : "hidden"
+            }}
+          >
+            {char}
+          </span>
         </div>
-      );
-    });
-    return <div className="GGGame-GuessWord-Container">{wordChars}</div>;
-  }
+      ))}
+    </div>
+  );
 }
+
+export default GGGuessWord;
