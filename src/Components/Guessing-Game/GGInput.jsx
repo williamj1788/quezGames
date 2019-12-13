@@ -1,8 +1,8 @@
 import React from "react";
 
-function GGInput({ onEnter, onClick, Guesses, Hints }) {
+function GGInput({ onEnter, onClick, guesses, hints }) {
   function handleOnEnter(e) {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && e.target.value) {
       onEnter(e.target.value);
       e.target.value = "";
     }
@@ -11,7 +11,7 @@ function GGInput({ onEnter, onClick, Guesses, Hints }) {
   return (
     <div className="GGGame-input-Container">
       <button className="GGGame-button Hint" onClick={onClick}>
-        Hint: <span>{Hints}</span>
+        Hint: <span>{hints}</span>
       </button>
       <input
         className="GGGame-input"
@@ -20,7 +20,7 @@ function GGInput({ onEnter, onClick, Guesses, Hints }) {
         onKeyUp={handleOnEnter}
       />
       <button className="GGGame-button Guess">
-        Guess: <span>{Guesses}</span>
+        Guess: <span>{guesses}</span>
       </button>
     </div>
   );

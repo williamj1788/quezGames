@@ -1,14 +1,13 @@
 import React from "react";
 
-function GGGuessWord({ word }) {
-  const [wordString, wordIndexArr] = word;
+function GGGuessWord({ word, charToShow }) {
   return (
     <div className="GGGame-GuessWord-Container">
-      {wordString.split("").map((char, i) => (
+      {word.split("").map((char, i) => (
         <div className="GGGame-GuessWord-Character" key={i}>
           <span
             style={{
-              visibility: wordIndexArr.indexOf(i) !== -1 ? "" : "hidden"
+              visibility: charToShow.includes(i) ? "" : "hidden"
             }}
           >
             {char}
