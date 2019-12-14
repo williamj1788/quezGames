@@ -1,257 +1,282 @@
-.game.title{
-    white-space: nowrap;
+.game.title {
+  white-space: nowrap;
 }
 
-.computer{
-    font-size: 45px;
-    font-family: 'Aleo', serif;
-    display: inline-block;
-    color: #FF0000;
+.computer {
+  font-size: 45px;
+  font-family: "Aleo", serif;
+  display: inline-block;
+  color: #ff0000;
 }
-.player{
-    font-size: 45px;
-    font-family: 'Aleo', serif;
-    display: inline-block;
-    color: #5AA5E8;
+.player {
+  font-size: 45px;
+  font-family: "Aleo", serif;
+  display: inline-block;
+  color: #5aa5e8;
 }
-#TTTGrid{
-    width: fit-content;
-    margin: 0 auto;
-    margin-top: 25px;
-    display: grid;
-    grid-template-rows: repeat(3, minmax(50px,200px));
-    grid-template-columns: repeat(3, minmax(50px,200px));
+#TTTGrid {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 30px 0;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
-.square{
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    background-repeat: no-repeat;
-    background-size: 80% 80%;
-    background-image: url(../Components/Img/x.png);
-    background-position: center;
+.square {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  background-image: url(../Components/Img/x.png);
+  background-position: center;
 }
-#score-container{
-    width: 400px;
-    margin: 0 auto;
-    padding-top: 50px;
-}
-
-#score-title{
-    padding-top: 25px;
-    font-size: 30px;
-    font-family: 'Aleo', serif;
-    color: #FF0000;
-    text-align: center;
-}
-.RPS-Game{
-    max-width: 1050px;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-}
-#RPS-container{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 3fr 4fr 3fr;
-    padding-top: 100px;
-}
-.RPS-imgs{
-    display: block;
-    max-width: 280px;
-    width: 100%;
-    max-height: 280px;
-    height: 100%;
-    border: 0;
-}
-.RPS-player{
-    margin: 0 22px;
-}
-.score-div{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.RPS-player-score{
-    font-size: 40px;
-    font-family: 'Aleo', serif;
-}
-#RPS-winner{
-    font-size: 40px;
-    font-family: 'Aleo', serif;
-    margin: 170px auto;
-    width: fit-content;
-}
-#RPS-button-container{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    margin-bottom: 200px;
-
-}
-.RPS-button{
-    width: 200px;
-    height: 70px;
-    border: 0;
-    background-color: #00ADF9;
-    color: white;
-    font-family: 'Aleo', serif;
-    font-size: 25px;
-    border-radius: 13px;
-}
-.RPS-button:hover{
-    background-color: #4178AA;
-    cursor: pointer; 
-}
-.GGGame-title{
-    font-size: 49px;
-    font-family: 'Aleo', serif;
-    color: #FF0000;
-    font-weight: normal;
-    text-align: center;
-    padding-top: 30px;
-}
-.GGGame-GuessWord-Container{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 40px;
-    
-    max-width: fit-content;
-    width: 100%;
-    height: 61px;
-}
-.GGGame-GuessWord-Character{
-    border-bottom: 3px solid black;
-    font-size: 50px;
-    margin: 0 10px;
-    color: #FF0000;
-    width: 40px;
-    text-align: center; 
-
-}
-.GGGame-GuessedWords-Container{
-    margin-top: 40px;
-    text-align: center; 
-    height: 462px;
-}
-.GGGame-GuessedWords-title{
-    font-size: 35px;
-    font-family: 'Aleo', serif;
-    color: #00ADF9;
-    font-weight: normal;
-    text-align: center;
-}
-.GGGame-GuessedWords-Character{
-    font-size: 35px;
-    font-family: 'Aleo', serif;
-    color: #00ADF9;
-    
-}
-.GGGame-input-Container{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
-    margin: 40px 0;
-}
-.GGGame-button{
-    width: 225px;
-    height: 91px;
-    border: 0;
-    background-color: #00ADF9;
-    color: white;
-    font-family: 'Aleo', serif;
-    font-size: 25px;
-    border-radius: 20px;
-    box-shadow: 1px 3px 6px grey;
-}
-.GGGame-input{
-    border-radius: 20px;
-    border: 0;
-    box-shadow: 1px 3px 6px grey;
-    max-width: 519px;
-    width: 100%;
-    color: #00ADF9;
-    font-family: 'Aleo', serif;
-    font-size: 45px;
-    text-align: center; 
-}
-.Hint:hover{
-    background-color: #4178AA;
-    cursor: pointer; 
-}
-.AGC-log{
-    border: 0;
-    border-radius: 20px;
-    box-shadow: 1px 3px 6px grey;
-    display: block;
-    margin: 0 auto;
-    resize: none;
-    max-width: 600px;
-    width: 100%;
-    height: 500px;
-    padding: 10px;
-    font-size: 20px;
-    font-family: 'Aleo', serif;
-    color: #00ADF9;
-    text-align: center;
-    white-space: pre-line;
-}
-.AGC-button-container{
-    display: flex;
-    margin: 20px 10px;;
-
+#score-container {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.AGC-button{
-    width: 325px;
-    height: 260px;
-    border: 0;
-    background-color: #00ADF9;
-    color: white;
-    font-family: 'Aleo', serif;
-    font-size: 25px;
-    border-radius: 20px;
-    box-shadow: 1px 3px 6px grey;
+#score-title {
+  padding-top: 25px;
+  font-size: 30px;
+  font-family: "Aleo", serif;
+  color: #ff0000;
+  text-align: center;
 }
-.AGC-button:hover{
-    background-color: #4178AA;
-    cursor: pointer;
+.RPS-Game {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+#RPS-container {
+  display: grid;
+  width: 100%;
+  height: 400px;
+  grid-template-columns: 3fr 4fr 3fr;
+  padding-top: 50px;
+}
+.RPS-imgs {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  max-height: 280px;
+  height: 100%;
+  border: 0;
+}
+.RPS-player {
+  margin: 0 22px;
+}
+.score-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.RPS-player-score {
+  font-size: 40px;
+  font-family: "Aleo", serif;
+}
+#RPS-winner {
+  font-size: 40px;
+  font-family: "Aleo", serif;
+  margin: 170px auto;
+  width: fit-content;
+}
+#RPS-button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+}
+.RPS-button {
+  width: 200px;
+  height: 70px;
+  border: 0;
+  background-color: #00adf9;
+  color: white;
+  font-family: "Aleo", serif;
+  font-size: 25px;
+  border-radius: 13px;
+  margin: 0 10px;
+}
+.RPS-button:hover {
+  background-color: #4178aa;
+  cursor: pointer;
+}
+.GGGame-title {
+  font-size: 49px;
+  font-family: "Aleo", serif;
+  color: #ff0000;
+  font-weight: normal;
+  text-align: center;
+  padding-top: 30px;
+}
+.GGGame-GuessWord-Container {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  max-width: fit-content;
+  width: 100%;
+  height: 61px;
+}
+.GGGame-GuessWord-Character {
+  border-bottom: 3px solid black;
+  font-size: 50px;
+  margin: 0 10px;
+  color: #ff0000;
+  width: 40px;
+  text-align: center;
+}
+.GGGame-GuessedWords-Container {
+  margin-top: 40px;
+  text-align: center;
+  height: 462px;
+}
+.GGGame-GuessedWords-title {
+  font-size: 35px;
+  font-family: "Aleo", serif;
+  color: #00adf9;
+  font-weight: normal;
+  text-align: center;
+}
+.GGGame-GuessedWords-Character {
+  font-size: 35px;
+  font-family: "Aleo", serif;
+  color: #00adf9;
+}
+.GGGame-input-Container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  margin: 40px 0;
+}
+.GGGame-button {
+  width: 225px;
+  height: 91px;
+  border: 0;
+  background-color: #00adf9;
+  color: white;
+  font-family: "Aleo", serif;
+  font-size: 25px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 6px grey;
+}
+.GGGame-input {
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 1px 3px 6px grey;
+  max-width: 519px;
+  width: 100%;
+  color: #00adf9;
+  font-family: "Aleo", serif;
+  font-size: 45px;
+  text-align: center;
+}
+.Hint:hover {
+  background-color: #4178aa;
+  cursor: pointer;
+}
+.AGC-log {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 1px 3px 6px grey;
+  display: block;
+  margin: 0 auto;
+  resize: none;
+  max-width: 600px;
+  width: 100%;
+  height: 500px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Aleo", serif;
+  color: #00adf9;
+  text-align: center;
+  white-space: pre-line;
+}
+.AGC-button-container {
+  display: flex;
+  margin: 20px 10px;
 }
 
-@media(max-width: 900px){
-    body .game.title{
-        font-size: 8vw;
-        left: 0;
-        white-space: normal;
-    }
-    .computer{
-        font-size: 6vw;
-    }
-    .player{
-        font-size: 6vw;
-    }
-    #score-container{
-        width: 80%;
-    }
-    .GGGame-input-Container{
-        padding: 0 1%;
-    }
-    .GGGame-input{
-        font-size: 4vw;
-    }
+.AGC-button {
+  width: 325px;
+  height: 260px;
+  border: 0;
+  background-color: #00adf9;
+  color: white;
+  font-family: "Aleo", serif;
+  font-size: 25px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 6px grey;
 }
-@media(max-width: 730px){
-    .RPS-player-score{
-        font-size: 4vw;
-    }
-    #RPS-winner{
-        font-size: 4vw;
-    }
-    .RPS-player{
-        margin: 0;
-    }
-    .GGGame-GuessWord-Character{
-        font-size: 7vw;
-        align-self: flex-end;
-    }
+.AGC-button:hover {
+  background-color: #4178aa;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  body .game.title {
+    font-size: 8vw;
+    left: 0;
+    white-space: normal;
+  }
+  .computer {
+    font-size: 6vw;
+  }
+  .player {
+    font-size: 6vw;
+  }
+  #score-container {
+    width: 80%;
+  }
+  .GGGame-input-Container {
+    padding: 0 1%;
+  }
+  .GGGame-input {
+    font-size: 4vw;
+  }
+}
+@media (max-width: 730px) {
+  .RPS-player-score {
+    font-size: 4vw;
+  }
+  #RPS-winner {
+    font-size: 4vw;
+  }
+  .RPS-player {
+    margin: 0;
+  }
+  .GGGame-GuessWord-Character {
+    font-size: 7vw;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 670px) {
+  #RPS-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  #TTTGrid {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  #TTTGrid {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 500px) {
+  #RPS-container {
+    padding-top: 10px;
+    height: 200px;
+  }
 }

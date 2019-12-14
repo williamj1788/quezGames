@@ -28,7 +28,7 @@ function TTT() {
   }
 
   return (
-    <div id="main">
+    <div className="main">
       <div id="container">
         <div className="titleBar">
           <h1 className="title game">Tick Tack Toe</h1>
