@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Home({ toggleDisplays }) {
+function Home() {
   return (
     <div id="main">
       <div id="container">
         <h1 className="title">QuezGames</h1>
         <h3 className="title-sub">Click To Play A Game</h3>
         <div className="gameContainer">
-          <TTTCard onClick={toggleDisplays[1]} />
-          <RPSCard onClick={toggleDisplays[4]} />
-          <GGCard onClick={toggleDisplays[3]} />
-          <AGCard onClick={toggleDisplays[2]} />
+          <TTTCard />
+          <RPSCard />
+          <GGCard />
+          <AGCard />
         </div>
       </div>
     </div>
@@ -19,44 +20,52 @@ function Home({ toggleDisplays }) {
 
 export default Home;
 
-function TTTCard({ onClick }) {
+function TTTCard() {
   return (
-    <div className="TTT card" onClick={onClick}>
-      <h3 className="card-title">Tic Tac Toe</h3>
-      <h3 className="card-description">
-        Click to play a classic game of Tic Tac Toe
-      </h3>
-    </div>
+    <Link className="link" to="tic-tac-toe">
+      <div className="TTT card">
+        <h3 className="card-title">Tic Tac Toe</h3>
+        <h3 className="card-description">
+          Click to play a classic game of Tic Tac Toe
+        </h3>
+      </div>
+    </Link>
   );
 }
 
-function RPSCard({ onClick }) {
+function RPSCard() {
   return (
-    <div className="RPS card" onClick={onClick}>
-      <h3 className="card-title">Rock Paper Scissors</h3>
-      <h3 className="card-description">
-        Click to play a classic game of Rock Paper Scissors
-      </h3>
-    </div>
+    <Link className="link" to="rock-paper-scissors">
+      <div className="RPS card">
+        <h3 className="card-title">Rock Paper Scissors</h3>
+        <h3 className="card-description">
+          Click to play a classic game of Rock Paper Scissors
+        </h3>
+      </div>
+    </Link>
   );
 }
 
-function GGCard({ onClick }) {
+function GGCard() {
   return (
-    <div className="GG card" onClick={onClick}>
-      <h3 className="card-title">Guessing Game</h3>
-      <h3 className="card-description">Click to play the Guessing Game</h3>
-    </div>
+    <Link className="link" to="guess-game">
+      <div className="GG card">
+        <h3 className="card-title">Guessing Game</h3>
+        <h3 className="card-description">Click to play the Guessing Game</h3>
+      </div>
+    </Link>
   );
 }
 
-function AGCard({ onClick }) {
+function AGCard() {
   return (
-    <div className="AG card" onClick={onClick}>
-      <h3 className="card-title">Adventure Game</h3>
-      <h3 className="card-description">
-        Click to play a text based adventure game
-      </h3>
-    </div>
+    <Link className="link" to="adventure">
+      <div className="AG card">
+        <h3 className="card-title">Adventure Game</h3>
+        <h3 className="card-description">
+          Click to play a text based adventure game
+        </h3>
+      </div>
+    </Link>
   );
 }

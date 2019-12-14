@@ -1,15 +1,16 @@
 import React from "react";
 import AGCGame from "./AGCGame";
+import { Link } from "react-router-dom";
 
-function AGC({ onClick }) {
+function AGC() {
   return (
     <div id="main">
       <div id="container">
         <div className="titleBar">
           <h1 className="title game">Adventure Game</h1>
-          <button className="homeButton" type="button" onClick={onClick}>
+          <Link className="flex homeButton link" to="/">
             Home
-          </button>
+          </Link>
         </div>
         <AGCGame />
       </div>

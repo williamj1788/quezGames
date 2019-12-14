@@ -1,15 +1,16 @@
 import React from "react";
 import GGGame from "./GGGame";
+import { Link } from "react-router-dom";
 
-function GG({ onClick }) {
+function GG() {
   return (
     <div id="main">
       <div id="container">
         <div className="titleBar">
           <h1 className="title game">Guessing Game</h1>
-          <button className="homeButton" type="button" onClick={onClick}>
+          <Link className="flex homeButton link" to="/">
             Home
-          </button>
+          </Link>
         </div>
         <GGGame />
       </div>

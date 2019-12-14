@@ -1,15 +1,16 @@
 import React from "react";
 import RPSGame from "./RPSGame";
+import { Link } from "react-router-dom";
 
-function RPS({ onClick }) {
+function RPS() {
   return (
     <div id="main">
       <div id="container">
         <div className="titleBar">
           <h1 className="title game">Rock Paper Scissors</h1>
-          <button className="homeButton" type="button" onClick={onClick}>
+          <Link className="flex homeButton link" to="/">
             Home
-          </button>
+          </Link>
         </div>
         <RPSGame />
       </div>

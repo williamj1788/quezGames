@@ -1,4 +1,3 @@
-"use strict";
 import React, { useState, useEffect } from "react";
 import GGGuessWord from "./GGGuessWord";
 import GGGuessedWord from "./GGGuessedWord";

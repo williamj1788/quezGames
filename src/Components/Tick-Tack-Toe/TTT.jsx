@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import TTTGame from "./TTTGame";
+import { Link } from "react-router-dom";
 
-function TTT({ onClick }) {
+function TTT() {
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
   const [scoreTitle, setScoreTitle] = useState("The Game Has Began!");
@@ -31,9 +32,9 @@ function TTT({ onClick }) {
       <div id="container">
         <div className="titleBar">
           <h1 className="title game">Tick Tack Toe</h1>
-          <button className="homeButton" type="button" onClick={onClick}>
+          <Link className="flex homeButton link" to="/">
             Home
-          </button>
+          </Link>
         </div>
         <div id="score-container">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
