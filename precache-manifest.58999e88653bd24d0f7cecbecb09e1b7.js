@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7ad6eaba2b6a1f8016e9cb000010bc0",
+    "revision": "0887796a375b0e4c6305afbdaee406ae",
     "url": "/quezGames/index.html"
   },
   {
-    "revision": "1ef39ea8e54775a0ef52",
-    "url": "/quezGames/static/css/main.6bf0c585.chunk.css"
+    "revision": "20be65a4910de8d99fff",
+    "url": "/quezGames/static/css/main.0e2cbedf.chunk.css"
   },
   {
-    "revision": "7c9ac0e6302eba187d18",
-    "url": "/quezGames/static/js/2.1a8875c1.chunk.js"
+    "revision": "4bf7663172f5f06636c3",
+    "url": "/quezGames/static/js/2.32b2ad08.chunk.js"
   },
   {
-    "revision": "1ef39ea8e54775a0ef52",
-    "url": "/quezGames/static/js/main.90b24ba5.chunk.js"
+    "revision": "20be65a4910de8d99fff",
+    "url": "/quezGames/static/js/main.400e7fed.chunk.js"
   },
   {
     "revision": "5d4e9eaa7463365c31af",
@@ -33,7 +33,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "8eb66576a57eda8470947d40468d3a60",
-    "url": "/quezGames/static/media/rock,_paper_larger.8eb66576.jpg"
+    "url": "/quezGames/static/media/rock_paper_larger.8eb66576.jpg"
   },
   {
     "revision": "0e73a56f8ace973a2bf26f9e4878866a",

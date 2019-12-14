@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/quezGames/static/css/main.6bf0c585.chunk.css",
-    "main.js": "/quezGames/static/js/main.90b24ba5.chunk.js",
-    "main.js.map": "/quezGames/static/js/main.90b24ba5.chunk.js.map",
+    "main.css": "/quezGames/static/css/main.0e2cbedf.chunk.css",
+    "main.js": "/quezGames/static/js/main.400e7fed.chunk.js",
+    "main.js.map": "/quezGames/static/js/main.400e7fed.chunk.js.map",
     "runtime-main.js": "/quezGames/static/js/runtime-main.67788627.js",
     "runtime-main.js.map": "/quezGames/static/js/runtime-main.67788627.js.map",
-    "static/js/2.1a8875c1.chunk.js": "/quezGames/static/js/2.1a8875c1.chunk.js",
-    "static/js/2.1a8875c1.chunk.js.map": "/quezGames/static/js/2.1a8875c1.chunk.js.map",
+    "static/js/2.32b2ad08.chunk.js": "/quezGames/static/js/2.32b2ad08.chunk.js",
+    "static/js/2.32b2ad08.chunk.js.map": "/quezGames/static/js/2.32b2ad08.chunk.js.map",
     "index.html": "/quezGames/index.html",
-    "precache-manifest.98543da8811d7849e4b47726b0b1d292.js": "/quezGames/precache-manifest.98543da8811d7849e4b47726b0b1d292.js",
+    "precache-manifest.58999e88653bd24d0f7cecbecb09e1b7.js": "/quezGames/precache-manifest.58999e88653bd24d0f7cecbecb09e1b7.js",
     "service-worker.js": "/quezGames/service-worker.js",
-    "static/css/main.6bf0c585.chunk.css.map": "/quezGames/static/css/main.6bf0c585.chunk.css.map",
+    "static/css/main.0e2cbedf.chunk.css.map": "/quezGames/static/css/main.0e2cbedf.chunk.css.map",
     "static/media/BlueCircle.png": "/quezGames/static/media/BlueCircle.11a067f2.png",
     "static/media/White.jpg": "/quezGames/static/media/White.4e7360ce.jpg",
     "static/media/HomeStyle.css": "/quezGames/static/media/tic_tac_toe.0e73a56f.gif",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.67788627.js",
-    "static/js/2.1a8875c1.chunk.js",
-    "static/css/main.6bf0c585.chunk.css",
-    "static/js/main.90b24ba5.chunk.js"
+    "static/js/2.32b2ad08.chunk.js",
+    "static/css/main.0e2cbedf.chunk.css",
+    "static/js/main.400e7fed.chunk.js"
   ]
 }
