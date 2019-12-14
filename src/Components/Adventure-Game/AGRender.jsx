@@ -11,11 +11,18 @@ export default class AGRender extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return (
+        <div>
+          <textarea className="AGC-log" value={"loading"} readOnly></textarea>
+        </div>
+      );
+    }
     let content = "space-around";
     let options = "null";
     if (this.props.node !== "") {
       options = this.props.node.options;
-      if (options !== "null") {
+      if (options) {
         options = options.map((item, index) => {
           return (
             <button
