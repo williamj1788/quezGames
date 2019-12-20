@@ -1,7 +1,7 @@
 import React from "react";
 
 function GGGuessedWord({ word, guessedWords }) {
-  function findIdenticalString(guessedWord) {
+  function countMatchesOfStrings(guessedWord) {
     const mapA = {};
     const mapB = {};
     for (let char of word.toLowerCase()) {
@@ -27,7 +27,7 @@ function GGGuessedWord({ word, guessedWords }) {
       <h3 className="GGGame-GuessedWords-title">You Have Tried</h3>
       {guessedWords.map((gWord, i) => (
         <div className="GGGame-GuessedWords-Character" key={i}>
-          {`${gWord} (${findIdenticalString(gWord)})`}
+          {`${gWord} (${countMatchesOfStrings(gWord)})`}
         </div>
       ))}
     </div>

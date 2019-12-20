@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import GGGuessWord from "./GGGuessWord";
 import GGGuessedWord from "./GGGuessedWord";
 import GGInput from "./GGInput";
-import key from "../../key";
+import wordList from "./Words.json";
 
 function GGGame() {
   const [title, setTitle] = useState("I'm thinking of a word");
@@ -14,7 +14,7 @@ function GGGame() {
 
   useEffect(() => {
     (async () => {
-      const newWord = await fetchNewWord();
+      const newWord = getRandomWord();
 
       startGameWithWord(newWord);
     })();
@@ -22,11 +22,11 @@ function GGGame() {
 
   async function handleOnEnter(wordInput) {
     if (word.toLowerCase() === wordInput.toLowerCase()) {
-      const newWord = await fetchNewWord();
+      const newWord = getRandomWord();
       return startGameWithWord(newWord, "That was the correct word!");
     }
     if (guessesLeft <= 0) {
-      const newWord = await fetchNewWord();
+      const newWord = getRandomWord();
       startGameWithWord(newWord, `Out of Guesses! The right word was: ${word}`);
       return;
     }
@@ -37,20 +37,15 @@ function GGGame() {
     setGuessesLeft(guessesLeft - 1);
   }
 
-  function fetchNewWord() {
-    return new Promise(async (resolve, reject) => {
-      const api = "https://wordsapiv1.p.mashape.com/words";
-      const wordQuery =
-        "/?lettersMin=5&lettersMax=15&frequencyMin=5&letterPattern=^[^0-9\\s]{5,15}$&random=true";
-      const res = await fetch(api + wordQuery, {
-        headers: { "X-RapidAPI-Key": key.WordAPIKey }
-      });
-      if (res.status !== 200) {
-        return reject(new Error("couldn't connect to Word API"));
-      }
-      const { word } = await res.json();
-      resolve(word);
-    });
+  const pastWordIndex = useRef(null); // to guarantee we get a new word;
+  function getRandomWord() {
+    const { words } = wordList;
+    const wordIndex = getRandomInt(0, words.length);
+    while (wordIndex === pastWordIndex.current) {
+      wordIndex = getRandomInt(0, words.length);
+    }
+    pastWordIndex.current = wordIndex;
+    return words[wordIndex].toLowerCase();
   }
 
   function getTwoRandomNumbers(min, max) {
