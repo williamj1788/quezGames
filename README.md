@@ -2,31 +2,19 @@
 
 ## Description
 
-> A simple gaming website that I made which allows you playing some basic games like
+> A gaming website which allows you playing some classic games like
 >
 > 1. Tick Tack Toe
 > 1. Rock Paper Scissors
 > 1. Word Guessing Game
 > 1. A text based Adventure Game
 
-## Timeline
-
-> February 5, 2019 - February 15, 2019
->
-> June 20, 2019
->
-> - Edit Text based Adventure Game
-
-## Technology
+## Technologies
 
 > - React
 > - CSS
-> - Word Api
-
-## What I learn
-
-> - Vastly improved React skills
-> - connected to a public api
+> - Workbox
+> - EsLint
 
 ## How to install
 
