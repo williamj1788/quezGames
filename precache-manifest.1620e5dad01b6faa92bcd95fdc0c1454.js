@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23bccf17d455ce5362aad380b2baf66a",
+    "revision": "cfeaade71c3a0ecff2beb02c3e985f76",
     "url": "/quezGames/index.html"
   },
   {
-    "revision": "c2eb109ea421a9b3ab55",
+    "revision": "b94b72660a5dab519df7",
     "url": "/quezGames/static/css/main.fed3e866.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/quezGames/static/js/2.95fdccb4.chunk.js"
   },
   {
-    "revision": "c2eb109ea421a9b3ab55",
-    "url": "/quezGames/static/js/main.f6470aa9.chunk.js"
+    "revision": "b94b72660a5dab519df7",
+    "url": "/quezGames/static/js/main.fb5f4e8b.chunk.js"
   },
   {
     "revision": "5d4e9eaa7463365c31af",

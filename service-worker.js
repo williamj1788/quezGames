@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/quezGames/precache-manifest.fb2281851cf00e7ab055e1da77f18415.js"
+  "/quezGames/precache-manifest.1620e5dad01b6faa92bcd95fdc0c1454.js"
 );
 
 self.addEventListener('message', (event) => {

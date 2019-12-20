@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/quezGames/static/css/main.fed3e866.chunk.css",
-    "main.js": "/quezGames/static/js/main.f6470aa9.chunk.js",
-    "main.js.map": "/quezGames/static/js/main.f6470aa9.chunk.js.map",
+    "main.js": "/quezGames/static/js/main.fb5f4e8b.chunk.js",
+    "main.js.map": "/quezGames/static/js/main.fb5f4e8b.chunk.js.map",
     "runtime-main.js": "/quezGames/static/js/runtime-main.67788627.js",
     "runtime-main.js.map": "/quezGames/static/js/runtime-main.67788627.js.map",
     "static/js/2.95fdccb4.chunk.js": "/quezGames/static/js/2.95fdccb4.chunk.js",
     "static/js/2.95fdccb4.chunk.js.map": "/quezGames/static/js/2.95fdccb4.chunk.js.map",
     "index.html": "/quezGames/index.html",
-    "precache-manifest.fb2281851cf00e7ab055e1da77f18415.js": "/quezGames/precache-manifest.fb2281851cf00e7ab055e1da77f18415.js",
+    "precache-manifest.1620e5dad01b6faa92bcd95fdc0c1454.js": "/quezGames/precache-manifest.1620e5dad01b6faa92bcd95fdc0c1454.js",
     "service-worker.js": "/quezGames/service-worker.js",
     "static/css/main.fed3e866.chunk.css.map": "/quezGames/static/css/main.fed3e866.chunk.css.map",
     "static/media/BlueCircle.png": "/quezGames/static/media/BlueCircle.11a067f2.png",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.67788627.js",
     "static/js/2.95fdccb4.chunk.js",
     "static/css/main.fed3e866.chunk.css",
-    "static/js/main.f6470aa9.chunk.js"
+    "static/js/main.fb5f4e8b.chunk.js"
   ]
 }
