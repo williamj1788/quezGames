@@ -3,22 +3,22 @@
   "name": "QuezGames",
   "icons": [
     {
-      "src": "/quezGame/icon-512x512.png",
+      "src": "/quezGames/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/quezGame/icon-192x192.png",
+      "src": "/quezGames/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/quezGame/favicon-32x32.png",
+      "src": "/quezGames/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "/quezGames/index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#0000ff"
