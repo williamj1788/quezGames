@@ -7,17 +7,23 @@ import AGC from "./Components/Adventure-Game/AGC";
 import "./Styles/TTTGameStyle.css";
 import "./Styles/HomeStyle.css";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/quezGames">
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/tic-tac-toe" component={TTT} />
         <Route path="/rock-paper-scissors" component={RPS} />
         <Route path="/guess-game" component={GG} />
         <Route path="/adventure" component={AGC} />
+        <Redirect exact to="/" />
       </Switch>
     </Router>
   );
