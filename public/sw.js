@@ -1,3 +1,3 @@
 window.addEventListener("install", event => {
-  event.waitUntil(caches.open())
+  event.waitUntil(caches.open());
 });

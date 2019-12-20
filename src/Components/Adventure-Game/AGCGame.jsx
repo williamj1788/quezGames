@@ -1,38 +1,30 @@
 import React, { useState, useEffect } from "react";
 import AGRender from "./AGRender";
+import gameNodes from "./Nodes.json";
 
 function AGCGame() {
-  const [currentNode, setCurrentNode] = useState({});
-  const [nodes, setNodes] = useState([]);
-  const [log, setLog] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [currentNode, setCurrentNode] = useState(null);
+  const [nodes, setNodes] = useState(null);
+  const [log, setLog] = useState(null);
   const [isGamingRestarting, setIsGamingRestarting] = useState(true);
 
   useEffect(() => {
     if (!isGamingRestarting) {
       return;
     }
-    (async () => {
-      const nodes = await fetchNodes();
-      const startNode = nodes.find(n => n.id === "start");
-      setNodes(nodes);
-      setCurrentNode(startNode);
-      setLog(startNode.natText);
-      setLoading(false);
-    })();
+    const { nodes } = cloneJson(gameNodes); // have to clone in order to reset the game later
+    const startNode = nodes.find(n => n.id === "start");
+    setNodes(nodes);
+    setCurrentNode(startNode);
+    setLog(startNode.natText);
   }, [isGamingRestarting]);
 
   useEffect(() => {
-    if (isGamingRestarting && loading) {
-      return;
-    }
     if (isGamingRestarting) {
       return setIsGamingRestarting(false);
     }
     if (currentNode.id === "start") {
-      setLoading(true);
-      setIsGamingRestarting(true);
-      return;
+      return setIsGamingRestarting(true);
     }
     setLog(log + "\n\n" + currentNode.natText);
   }, [currentNode]);
@@ -67,22 +59,10 @@ function AGCGame() {
     }
   }
 
-  async function fetchNodes() {
-    const res = await fetch("/Nodes.json");
-    if (res.status !== 200) {
-      throw new Error("couldn't fetch nodes");
-    }
-    const { nodes } = await res.json();
-    return nodes;
+  function cloneJson(jsonObj) {
+    return JSON.parse(JSON.stringify(jsonObj));
   }
 
-  return (
-    <AGRender
-      loading={loading}
-      node={currentNode}
-      text={log}
-      onClick={handleOnClick}
-    />
-  );
+  return <AGRender node={currentNode} text={log} onClick={handleOnClick} />;
 }
 export default AGCGame;
