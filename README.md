@@ -9,33 +9,36 @@
 > 1. Word Guessing Game
 > 1. A text based Adventure Game
 
-## Timeline 
+## Timeline
 
 > February 5, 2019 - February 15, 2019
 >
 > June 20, 2019
-> * Edit Text based Adventure Game
+>
+> - Edit Text based Adventure Game
 
 ## Technology
 
-> * React
-> * CSS
-> * Word Api
+> - React
+> - CSS
+> - Word Api
 
 ## What I learn
 
-> * Vastly improved React skills
-> * connected to a public api
+> - Vastly improved React skills
+> - connected to a public api
 
 ## How to install
 
 To view or edit this project, follow these instructions
+
 ```
 git clone https://github.com/williamj1788/quezGames
 cd quezGames
 npm install
 npm start
 ```
+
 The project should show open up in a new tab
 
 If it doesn't, you can view it on localhost 3001
@@ -46,20 +49,20 @@ If it doesn't, you can view it on localhost 3001
 
 ### Home
 
-![Home](./Home.png)
+![Home](./project-images/Home.png)
 
 ### Tick-Tack-Toe
 
-![TTT](./TTT.png)
+![TTT](./project-images/TTT.png)
 
 ### Rock-Paper-Scissors
 
-![RPS](./RPS.png)
+![RPS](./project-images/RPS.png)
 
 ### Guessing Game
 
-![GG](./GG.png)
+![GG](./project-images/GG.png)
 
 ### Adventure Game
 
-![AG](./AG.png)
+![AG](./project-images/AG.png)
